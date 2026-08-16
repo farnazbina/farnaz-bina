@@ -90,7 +90,36 @@ export function Experience() {
                             <div className="grid gap-4 md:grid-cols-[10rem_1fr] md:gap-10">
                                 <p className="eyebrow pt-1">{e.period}</p>
                                 <div>
-                                    <h3 className="display text-3xl sm:text-4xl">{e.company}</h3>
+                                    <div className="flex items-center gap-x-6 w-full justify-between">
+                                        <h3 className="display text-3xl sm:text-4xl">
+                                            {e.link ? (
+                                                <a
+                                                    href={e.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="group inline-flex items-center gap-2 hover:text-accent transition-colors"
+                                                >
+                                                    {e.company}
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    >
+                                                        <path d="M7 7h10v10" />
+                                                        <path d="M7 17 17 7" />
+                                                    </svg>
+                                                </a>
+                                            ) : (
+                                                e.company
+                                            )}
+                                        </h3>
+                                    </div>
                                     <p className="mt-2 text-sm text-muted-foreground">
                                         {e.role}
                                     </p>

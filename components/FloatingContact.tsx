@@ -2,8 +2,9 @@
 "use client";
 
 import { useState } from "react";
-import { LuGithub, LuMail, LuLinkedin, LuTwitter, LuMessageCircle, LuInstagram } from "react-icons/lu";
+import { LuGithub, LuMail, LuLinkedin, LuMessageCircle, LuInstagram } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
+import { FaXTwitter } from "react-icons/fa6";
 
 interface SocialLink {
     name: string;
@@ -27,7 +28,7 @@ export function FloatingContact() {
         },
         {
             name: "Instagram",
-            url: "https://github.com/farnaz._.bina",
+            url: "https://www.instagram.com/farnaz._.bina/",
             icon: <LuInstagram className="w-5 h-5" />,
         },
         {
@@ -36,9 +37,9 @@ export function FloatingContact() {
             icon: <LuLinkedin className="w-5 h-5" />,
         },
         {
-            name: "Twitter",
-            url: "https://twitter.com/farnaz_bina",
-            icon: <LuTwitter className="w-5 h-5" />,
+            name: "X.com",
+            url: "https://x.com/farnaz_bina",
+            icon: <FaXTwitter className="w-5 h-5" />,
         },
     ];
 
@@ -48,7 +49,7 @@ export function FloatingContact() {
             {isOpen && (
                 <div className="mb-4 w-64 rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-5 animate-in slide-in-from-bottom-5 duration-300">
                     <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Let's Connect</h3>
+                        <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Let&apos;s Connect</h3>
                         <button
                             onClick={() => setIsOpen(false)}
                             className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
@@ -76,7 +77,7 @@ export function FloatingContact() {
                         ))}
                     </div>
                     <div className="mt-4 pt-3 border-t border-gray-200/50 dark:border-gray-700/50">
-                        <p className="text-xs text-center text-gray-500 dark:text-gray-400">
+                        <p className="text-sm text-center text-gray-500 dark:text-gray-400">
                             📧 farnazbina.dev@gmail.com
                         </p>
                     </div>
