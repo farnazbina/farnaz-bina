@@ -21,12 +21,9 @@ export default async function ProjectPage({ params }: PageProps) {
     // await کردن params
     const { slug } = await params;
 
-    console.log("Slug from params:", slug); // برای دیباگ
-
     const project = getProjectBySlug(slug);
 
     if (!project) {
-        console.log("Project not found for slug:", slug); // برای دیباگ
         notFound();
     }
 

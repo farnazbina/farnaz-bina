@@ -2,7 +2,6 @@ import project1 from "@/assets/projects/chechup_salamat.webp";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
-import { time } from "console";
 
 export const NAV_LINKS = [
   { label: "About", href: "#about" },

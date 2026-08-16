@@ -7,7 +7,6 @@ interface GalleryProps {
 }
 
 export default function Gallery({ images, coverImage }: GalleryProps) {
-  console.log('images', images.length)
   return (
     <section className="w-full my-12 flex flex-wrap justify-center">
       <h2 className="text-3xl font-bold mb-6 w-full">Project Gallery</h2>
