@@ -41,10 +41,11 @@ export function Hero({ ready }: { ready: boolean }) {
         <div className="hero-svg absolute right-[4%] top-[9%] sm:right-[6%] sm:top-[8%] md:right-[10%] lg:top-[13%] z-10">
           <Image
             src='/images/22_hero-img.webp'
-            width={400}
-            height={500}
+            width={180}  // Match w-45 (45 * 4px = 180px)
+            height={225} // Maintain aspect ratio (180 * 1.25 = 225)
             alt="Hero_svg"
-            className="w-[180px] h-auto sm:w-[200px] md:w-[300px] lg:w-[400px]"
+            loading="eager"
+            className="w-45 h-auto sm:w-50 md:w-75 lg:w-100"
           />
         </div>
 

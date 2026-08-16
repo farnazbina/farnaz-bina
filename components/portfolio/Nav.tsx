@@ -10,7 +10,7 @@ export function Nav() {
   const header = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // if (!ready || !header.current) return;
+    if (!header.current) return;
     gsap.from(header.current.children, {
       y: -20,
       opacity: 0,

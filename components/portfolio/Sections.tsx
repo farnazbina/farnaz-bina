@@ -1,7 +1,6 @@
 'use client'
-import headshot from "@/assets/headshot.jpg";
 import { SERVICES, STATS, TESTIMONIALS } from "./data";
-
+import { MouseEvent } from "react";
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
@@ -217,12 +216,12 @@ export function Contact() {
 }
 
 export function Footer () {
-  const handleScrollToTop = (e) => {
+  const handleScrollToTop = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     gsap.to(window, {
       duration: 1.2,
       scrollTo: { y: 0, autoKill: true },
-      ease: 'power3.inOut',
+      ease: "power3.inOut",
     });
   };
 

@@ -50,7 +50,7 @@ export default async function ProjectPage({ params }: PageProps) {
                         src={coverImage}
                         alt={title}
                         fill
-                        className="object-cover h-full w-full"
+                        className="object-cover h-full w-full object-top"
                         priority
                         objectFit="cover"
                     />
@@ -122,7 +122,7 @@ export default async function ProjectPage({ params }: PageProps) {
             </article>
 
             {/* گالری تصاویر */}
-            {gallery && gallery.length > 0 && <Gallery images={gallery} />}
+            {gallery && gallery.length > 0 && <Gallery images={gallery} coverImage={coverImage} />}
         </main>
     );
 }

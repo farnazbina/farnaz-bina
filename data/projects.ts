@@ -114,6 +114,99 @@ export const projects: Project[] = [
       "/images/saas_dashboard/teams.png",
     ],
   },
+  {
+    slug: "interior_design_studio",
+    title: "Interior Design Studio",
+    tag: "React / Next.js / GSAP",
+    year: "2026",
+    coverImage: "/projects/interior_design.png",
+    body: "A premium interior design studio website with immersive GSAP animations, multi-language support, and creative UX for a German client.",
+    demo: "https://interior-design-six-snowy.vercel.app/",
+    github: "",
+    createdDate: "2026-07-10",
+    content: {
+      introduction:
+        "A sophisticated interior design portfolio website crafted for a German design studio. The project focuses on delivering an immersive visual experience through smooth GSAP animations, creative typography, and intuitive navigation. The multilingual interface (German/English) ensures accessibility for both local and international clients.",
+      goals: [
+        "Create a premium brand presence with cinematic animations.",
+        "Showcase design projects with immersive visual storytelling.",
+        "Implement seamless multi-language support (DE/EN).",
+        "Deliver a fully responsive experience across all devices.",
+        "Optimize for performance while maintaining visual richness.",
+      ],
+      features: [
+        {
+          title: "Immersive GSAP Animations",
+          description:
+            "Scroll-triggered animations, parallax effects, smooth transitions, and micro-interactions that elevate the user experience and reflect the studio's attention to detail.",
+        },
+        {
+          title: "Multi-Language Support",
+          description:
+            "Full German and English localization using next-i18next, with language switcher and translated content for all pages including portfolio, services, and about.",
+        },
+        {
+          title: "Creative UX Design",
+          description:
+            "Carefully crafted user journey with visual hierarchy, elegant typography, and intuitive navigation that guides visitors through the studio's work and philosophy.",
+        },
+        {
+          title: "Dynamic Portfolio Gallery",
+          description:
+            "Filterable project grid with lightbox previews, project detail pages, and smooth image loading optimized for visual storytelling.",
+        },
+        {
+          title: "Contact & Inquiry System",
+          description:
+            "Elegant contact form with validation, integrated with email service for client inquiries and project consultations.",
+        },
+      ],
+      techStack: {
+        Framework: "Next.js 14 (App Router)",
+        Language: "TypeScript",
+        Styling: "Tailwind CSS + Framer Motion",
+        Animations: "GSAP (ScrollTrigger, Timeline, TextPlugin)",
+        "Multi-Language": "next-i18next / i18next",
+        Forms: "React Hook Form + Zod",
+        Icons: "Lucide React",
+        Images: "Next.js Image Optimization",
+      },
+      challenges: [
+        {
+          title: "Complex Animation Orchestration",
+          description:
+            "Coordinating multiple GSAP timelines with scroll triggers required careful planning to avoid performance issues and ensure smooth animations across different devices and browsers.",
+        },
+        {
+          title: "Multi-Language Content Management",
+          description:
+            "Managing translated content for both German and English while maintaining consistent formatting and handling language-specific layout changes (e.g., German text length variations).",
+        },
+        {
+          title: "Performance Optimization",
+          description:
+            "Balancing rich animations with fast load times using lazy loading, code splitting, optimized images, and conditional animation loading based on device capabilities.",
+        },
+        {
+          title: "Responsive Animation Adaptation",
+          description:
+            "Adapting complex scroll animations and visual effects to work seamlessly on mobile devices with reduced motion preferences and touch interactions.",
+        },
+      ],
+      results: [
+        "Increased client engagement with 40% longer session duration.",
+        "Successfully launched in German and English markets.",
+        "Received positive feedback on visual storytelling and brand presentation.",
+        "Improved conversion rate for design consultations.",
+        "Established a strong digital presence for the studio in the German market.",
+      ],
+      conclusion:
+        "This project demonstrated how combining creative design with technical excellence can create a truly immersive brand experience. The GSAP animations brought the studio's design philosophy to life, while the multi-language support opened doors to international clients. The modular architecture ensures easy updates for new projects and content.",
+    },
+    gallery: [
+      "/projects/interior_design.png",
+    ],
+  },
   // می‌توانید پروژه‌های دیگر را هم اضافه کنید
 ];
 

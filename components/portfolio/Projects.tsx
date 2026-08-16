@@ -51,7 +51,7 @@ export function Projects() {
                     loading="lazy"
                     width={1280}
                     height={960}
-                    className="h-full w-full scale-105 object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-100"
+                    className="h-full w-full scale-105 object-top object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-100"
                   />
                 </div>
 
