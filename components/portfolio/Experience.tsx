@@ -68,7 +68,7 @@ export function Experience() {
                     </h2>
                 </div>
                 <p className="max-w-sm text-sm leading-relaxed text-muted-foreground" data-reveal>
-                    Nine years across fintech, agencies and product teams — building interfaces that stay
+                    Five years across fintech, agencies and product teams — building interfaces that stay
                     fast and legible as they grow.
                 </p>
             </div>

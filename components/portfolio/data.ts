@@ -116,6 +116,15 @@ export const SKILLS = [
 
 export const EXPERIENCES = [
   {
+    period: "Sep 2025 - Aug 2026",
+    role: "Frontend Engineer",
+    company: "Amniyat Parast Co",
+    link: "",
+    location: "",
+    body: "Engineered a fully responsive, high-performance website from scratch using Next.js and TypeScript, delivering seamless user experiences across all devices with Tailwind CSS. Built dynamic, type-safe forms with React Hook Form and Zod for robust validation, ensuring clean data submission and enhanced user experience. Implemented state management using Zustand, efficiently handling complex application state across multiple components and improving data consistency.",
+    stack: ["React.js", "Next.js", "Tailwind CSS", "Rest API", "ApexCharts"],
+  },
+  {
     period: "Jul 2024 - Jan 2026",
     role: "Frontend Engineer",
     company: "Checkup Salamat",
