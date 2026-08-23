@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { SKILLS } from "./data";
 import Image from "next/image";
 
 const HEADLINE = ["Farnaz", "Bina"];
@@ -52,8 +51,11 @@ export function Hero({ ready }: { ready: boolean }) {
         <div className="flex flex-col w-full mt-8 sm:mt-0 sm:absolute sm:bottom-[4%] sm:left-0 sm:right-0 sm:mx-auto px-0 sm:px-6 md:px-10 2xl:px-20 relative z-20">
           <div className="blured-card"></div>
 
-          <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[50%] lg:max-w-[30%] text-sm sm:text-base md:text-[20px] 2xl:text-[26px] font-semibold">
-            Pixel-perfect creative projects, brought to life through hundreds of design-to-code transformations.
+          <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[70%] text-sm sm:text-base md:text-[32px] 2xl:text-[26px] font-semibold">
+            I turn ideas into modern, high-performance websites
+          </p>
+          <p className="mt-10 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[16px] 2xl:text-[22px] font-medium">
+            I design and develop fast, responsive web experiences using React, Next.js and TypeScript — from first idea to production.
           </p>
 
           <h1
@@ -72,31 +74,23 @@ export function Hero({ ready }: { ready: boolean }) {
               </span>
             ))}
           </h1>
+          <strong className="mt-4 md:mt-0 mb-10 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[22px] 2xl:text-[22px] font-medium">Frontend Developer</strong>
 
-          <div className="flex mt-2 sm:mt-4 md:mt-0 grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-[1fr_auto] items-center relative z-20">
+          <div className="mt-2 sm:mt-4 md:mt-0 grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-[1fr_auto] items-center relative z-20">
 
-            <div data-hero-fade className="mt-6 sm:mt-4 flex flex-wrap gap-x-1.5 sm:gap-x-2 gap-y-2 sm:gap-y-3 md:max-w-4/5 2xl:max-w-3/4">
-              {SKILLS.map((s) => (
-                <div
-                  key={s}
-                  className="rounded-full border border-[#161616] bg-surface/60 px-3 sm:px-4 h-6 sm:h-7 md:h-7 2xl:h-9 flex items-center text-[10px] sm:text-[12px] md:text-[12px] 2xl:text-[16px] font-medium text-text transition-colors duration-300 hover:border-accent hover:text-accent"
-                >
-                  {s}
-                </div>
-              ))}
-            </div>
+            
 
             <div data-hero-fade className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 sm:mt-0 mb-10 sm:mb-0">
               <a
                 href="#work"
                 className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-foreground px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4 text-xs sm:text-sm font-medium text-background transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
               >
-                View selected work
+                Explore my work
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
               <a
                 href="#contact"
-                className="link-underline text-xs sm:text-sm font-medium"
+                className="text-xs sm:text-sm font-medium rounded-full border border-solid border-accent transition-all duration-300 hover:bg-accent hover:text-accent-foreground px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4"
               >
                 Start a project
               </a>
