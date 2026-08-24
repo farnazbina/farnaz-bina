@@ -27,7 +27,7 @@ export default function BeautyWhyUs() {
         <section id="why-us" className="scroll-mt-20 bg-beauty-blush py-20 lg:py-28">
             <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
                 <div>
-                    <p className="text-xs font-medium uppercase tracking-[0.3em] text-beauty-primary">
+                    <p className="text-sm font-medium uppercase tracking-[0.3em] text-beauty-primary">
                         چرا ما را انتخاب کنید؟
                     </p>
                     <h2 className="mt-4  text-4xl font-medium tracking-tight text-beauty-foreground sm:text-5xl">

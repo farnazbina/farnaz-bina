@@ -23,7 +23,7 @@ export default function BeautyContact({ address, phone, email }: Props) {
         <section id="contact" className="scroll-mt-20 bg-beauty-blush py-20 lg:py-28">
             <div className="mx-auto max-w-7xl px-5 sm:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary">
+                    <p className="text-sm font-medium uppercase tracking-[0.3em] text-beauty-primary">
                         تماس با ما
                     </p>
                     <h2 className="mt-4 text-4xl font-medium tracking-tight text-beauty-foreground sm:text-5xl">
