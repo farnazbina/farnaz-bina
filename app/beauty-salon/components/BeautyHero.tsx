@@ -19,7 +19,7 @@ export default function BeautyHero({ title, subtitle }: Props) {
                         زیبایی تو، با ظرافتی که طبیعی به نظر می‌رسد
                     </h1>
                     <p className="mt-6 text-lg font-light leading-relaxed text-muted-foreground">
-                        در کلینیک ما، زیبایی یعنی حفظ اصالت چهره و ایجاد تغییراتی ظریف، متناسب و ماندگار. با استفاده از روش‌های نوین پزشکی و برنامه درمانی اختصاصی، همراهت هستیم تا بهترین نسخه‌ی خودت را تجربه کنی.
+                        {subtitle}
                     </p>
                     <div className="mt-9 flex flex-wrap items-center gap-5">
                         <a

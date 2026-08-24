@@ -41,12 +41,12 @@ export interface ClinicData {
 
 export const beautyClinicsData: ClinicData[] = [
     {
-        slug: "auraskin-clinic",
-        name: "کلینیک اورااسکین",
-        logo: "اورااسکین",
+        slug: "neda-jalili",
+        name: "کلینیک ندا جلیلی",
+        logo: "ندا جلیلی",
         hero: {
             title: "زیبایی در آمیخته با علم",
-            subtitle: "مراقبت‌های شخصی‌سازی شده برای سفر منحصر‌به‌فرد زیبایی شما",
+            subtitle: "مراقبت‌های شخصی‌سازی شده برای سفر منحصر‌به‌فرد زیبایی شما - تنها نمایندگی برند آلمانی دکتر شرامک در شمال غرب - مدرس رسمی فمی و حرفه ای کشور",
         },
         services: [
             {
@@ -75,9 +75,9 @@ export const beautyClinicsData: ClinicData[] = [
             }
         ],
         contact: {
-            address: "خیابان زیبایی ۱۲۳، واحد ۱۰۰، تهران، ایران",
-            phone: "۰۲۱-۱۲۳۴-۵۶۷۸",
-            email: "info@auraskin.com",
+            address: "تبریز- ولیعصر ",
+            phone: "09144798339",
+            email: "info@nedajalili.com",
             mapEmbed: "https://www.google.com/maps/embed?pb=..."
         },
         footer: {
