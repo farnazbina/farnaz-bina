@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: PageProps) {
         notFound();
     }
 
-    const { title, createdDate, coverImage, content, gallery } = project;
+    const { title, createdDate, coverImage, content, gallery, subtitle } = project;
 
     return (
         <main className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -42,39 +42,73 @@ export default async function ProjectPage({ params }: PageProps) {
                         day: "numeric",
                     })}
                 </p>
-                <div className="relative w-full h-64 md:h-112 mt-4 rounded-xl overflow-hidden shadow-lg">
+                <div className="relative w-full h-64 md:h-172 mt-4 rounded-xl overflow-hidden shadow-lg">
                     <Image
                         src={coverImage}
                         alt={title}
                         fill
                         className="object-cover h-full w-full object-top"
                         priority
-                        objectFit="cover"
                     />
                 </div>
             </header>
 
+            <h2 className="text-xl font-semibold tracking-tight">{subtitle}</h2>
             {/* محتوای اصلی */}
             <article className="prose prose-lg dark:prose-invert max-w-none">
-                <ContentSection title="Introduction">
+                <ContentSection title="Overview">
                     <p>{content.introduction}</p>
                 </ContentSection>
 
-                <ContentSection title="Goals">
+                <ContentSection title="My Role">
+                    <h3>{content.role?.title}</h3>
+                    <p>{content.role?.description}</p>
+                </ContentSection>
+                <ContentSection title="Key Responsibilities">
                     <ul>
-                        {content.goals.map((goal, i) => (
-                            <li key={i}>{goal}</li>
+                        {content.responsibilities?.map((res, i) => (
+                            <li key={i} className="mb-1">. {res}</li>
+                        ))}
+                    </ul>
+                </ContentSection>
+                <ContentSection title="Key Features">
+                    <ul>
+                        {content.keyfeatures?.map((feat, i) => (
+                            <div key={i} className="flex flex-col border-b border-solid border-border mb-5 pb-5">
+                                <span className="text-lg font-semibold mb-3">{feat.title}</span>
+                                <span className="text-md mb-3">{feat.subtitle}</span>
+                                {feat.description && <span className="text-md mb-1">- {feat.description}</span>}
+                                {feat.list && feat.list.length > 0 && <ul>
+                                    {feat.list.map((i, index) => (
+                                        <li key={index} className="text-md mb-1 ">. {i}</li>
+                                    ))}
+                                </ul>}
+                                {feat.note && <p className="text-md mt-3">{feat.note}</p>}
+                            </div>
                         ))}
                     </ul>
                 </ContentSection>
 
-                <ContentSection title="Key Features">
+                {/* <ContentSection title="Key Features">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {content.features.map((feature, i) => (
                             <div key={i} className="border rounded-lg p-4 shadow-sm">
                                 <h3 className="text-lg font-semibold">{feature.title}</h3>
                                 <p className="text-gray-600 dark:text-gray-400">
                                     {feature.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </ContentSection> */}
+
+                <ContentSection title="Technical Challenges">
+                    <div className="space-y-4">
+                        {content.challenges.map((challenge, i) => (
+                            <div key={i} className="">
+                                <h3 className="text-lg font-semibold">{challenge.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-400">
+                                    {challenge.description}
                                 </p>
                             </div>
                         ))}
@@ -92,29 +126,13 @@ export default async function ProjectPage({ params }: PageProps) {
                     </dl>
                 </ContentSection>
 
-                <ContentSection title="Challenges & Solutions">
-                    <div className="space-y-4">
-                        {content.challenges.map((challenge, i) => (
-                            <div key={i} className="border-l-4 border-blue-500 pl-4">
-                                <h3 className="text-lg font-semibold">{challenge.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400">
-                                    {challenge.description}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </ContentSection>
 
-                <ContentSection title="Results">
+                <ContentSection title="Result">
                     <ul>
                         {content.results.map((result, i) => (
                             <li key={i}>{result}</li>
                         ))}
                     </ul>
-                </ContentSection>
-
-                <ContentSection title="Conclusion">
-                    <p>{content.conclusion}</p>
                 </ContentSection>
             </article>
 

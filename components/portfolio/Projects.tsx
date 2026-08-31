@@ -81,14 +81,15 @@ export function Projects() {
                 >
                   Live demo
                 </a>
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="link-underline text-sm font-medium"
-                >
-                  GitHub
-                </a>
+                {p.github &&
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="link-underline text-sm font-medium"
+                  >
+                    GitHub
+                  </a>}
               </div>
             </article>
           ))}

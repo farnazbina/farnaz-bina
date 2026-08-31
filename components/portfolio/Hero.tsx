@@ -52,10 +52,10 @@ export function Hero({ ready }: { ready: boolean }) {
           <div className="blured-card"></div>
 
           <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[70%] text-sm sm:text-base md:text-[32px] 2xl:text-[26px] font-semibold">
-            I turn ideas into modern, high-performance websites
+            Frontend Engineer building fast, scalable web experiences with React & Next.js
           </p>
           <p className="mt-10 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[16px] 2xl:text-[22px] font-medium">
-            I design and develop fast, responsive web experiences using React, Next.js and TypeScript — from first idea to production.
+            5 years of production experience across healthcare, fintech and business applications.
           </p>
 
           <h1
@@ -78,7 +78,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
           <div className="mt-2 sm:mt-4 md:mt-0 grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-[1fr_auto] items-center relative z-20">
 
-            
+
 
             <div data-hero-fade className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 sm:mt-0 mb-10 sm:mb-0">
               <a
