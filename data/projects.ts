@@ -35,7 +35,7 @@ export const projects: Project[] = [
     subtitle: "Online Appointment & Clinic Management Platform",
     tag: "Vue.js | Nuxt.js | TypeScript",
     year: "2026",
-    coverImage: "/images/checkup/landing.png",
+    coverImage: "/images/checkup/landing2.png",
     body: "A production healthcare platform supporting appointment booking, role-based dashboards, and multiple user workflows.",
     demo: "https://checkupsalamat.com/",
     github: "",
