@@ -28,7 +28,7 @@ export function FloatingContact() {
         },
         {
             name: "Instagram",
-            url: "https://www.instagram.com/farnaz._.bina/",
+            url: "https://www.instagram.com/farnazbina/",
             icon: <LuInstagram className="w-5 h-5" />,
         },
         {

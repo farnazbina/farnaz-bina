@@ -3,8 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { NAV_LINKS } from "./data";
+import { usePathname } from "next/navigation";
 
 export function Nav() {
+  const pathname = usePathname();
+  const links = [...NAV_LINKS, { label: "Blog", href: "/blog" }];
+  const resolveHref = (href: string) => href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
   const [open, setOpen] = useState(false);
   const overlay = useRef<HTMLDivElement | null>(null);
   const header = useRef<HTMLElement | null>(null);
@@ -52,14 +56,14 @@ export function Nav() {
         ref={header}
         className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 mix-blend-difference sm:px-10"
       >
-        <a href="#top" className="display text-2xl text-[oklch(1_0_0)] mt-3 sm:mt-0">
+        <a href={resolveHref("#top")} className="display text-2xl text-[oklch(1_0_0)] mt-3 sm:mt-0">
           Farnaz Bina
         </a>
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((l) => (
+          {links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={resolveHref(l.href)}
               className="link-underline text-sm text-[oklch(1_0_0)]/80 transition-colors hover:text-[oklch(1_0_0)]"
             >
               {l.label}
@@ -69,6 +73,8 @@ export function Nav() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
           className="flex items-center gap-3 text-sm text-[oklch(1_0_0)] md:hidden"
         >
           <span className="flex h-4 w-6 flex-col justify-between">
@@ -89,16 +95,18 @@ export function Nav() {
       </header>
 
       <div
+        id="mobile-menu"
+        inert={!open}
         ref={overlay}
         style={{ clipPath: "inset(0% 0% 100% 0%)", pointerEvents: "none" }}
         className="fixed inset-0 z-40 flex flex-col justify-between bg-foreground px-6 pb-10 pt-28 text-background sm:px-10"
       >
         <nav className="flex flex-col gap-2">
-          {NAV_LINKS.map((l) => (
+          {links.map((l) => (
             <span key={l.href} className="overflow-hidden py-1">
               <a
                 data-menu-link
-                href={l.href}
+                href={resolveHref(l.href)}
                 onClick={() => setOpen(false)}
                 className="display block text-[13vw] leading-[1] transition-colors hover:text-accent"
               >

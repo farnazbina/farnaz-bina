@@ -15,7 +15,7 @@ const socials = [{
 },
 {
   title: "Instagram",
-  link: "https://instagram.com/farnaz._.bina"
+  link: "https://instagram.com/farnazbina"
 },
 {
   title: "X",

@@ -4,6 +4,8 @@ import Image from "next/image";
 import { getProjectBySlug, projects } from "@/data/projects";
 import Gallery from "@/components/CaseStudy/Gallery";
 import ContentSection from "@/components/CaseStudy/ContentSection";
+import { Footer } from "@/components/portfolio/Sections";
+import { Nav } from "@/components/portfolio/Nav";
 
 // تولید مسیرهای استاتیک
 export async function generateStaticParams() {
@@ -30,7 +32,8 @@ export default async function ProjectPage({ params }: PageProps) {
     const { title, createdDate, coverImage, content, gallery, subtitle } = project;
 
     return (
-        <main className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <>
+        <main className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 mt-20">
             {/* هدر: عنوان، تاریخ، تصویر کاور */}
             <header className="mb-10">
                 <h1 className="text-4xl font-extrabold tracking-tight">{title}</h1>
@@ -139,5 +142,6 @@ export default async function ProjectPage({ params }: PageProps) {
             {/* گالری تصاویر */}
             {gallery && gallery.length > 0 && <Gallery images={gallery} coverImage={coverImage} />}
         </main>
+        </>
     );
 }

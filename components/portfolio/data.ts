@@ -12,9 +12,9 @@ export const NAV_LINKS = [
 
 export const STATS = [
   { value: "5+", label: "Years of experience" },
-  { value: "20+", label: "Successful projects" },
-  { value: "98%", label: "Client retention rate" },
-  { value: "50k+", label: "Users reached" },
+  { value: "20+", label: "Projects Shipped" },
+{ value: "3+", label: "Years with Vue/Nuxt" },
+{ value: "2+", label: "Years working remotely" },
 ];
 
 export const SERVICES = [
