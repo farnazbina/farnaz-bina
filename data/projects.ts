@@ -236,8 +236,8 @@ I used reusable components, centralized state management, consistent design patt
     year: "2026",
     coverImage: "/images/saas_dashboard/saas_dashboard.png",
     body: "A unified project management dashboard with task tracking, analytics, and timeline view.",
-    demo: "https://demo.com",
-    github: "https://github.com/yourusername/saas-dashboard",
+    demo: "https://saas-dashboard-iota-eight.vercel.app/overview",
+    github: "https://github.com/farnazbina/saas-dashboard",
     createdDate: "2026-01-15",
     content: {
       introduction:
