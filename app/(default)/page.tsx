@@ -3,6 +3,7 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Hero } from "@/components/portfolio/Hero";
 import { Nav } from "@/components/portfolio/Nav";
 import { Projects } from "@/components/portfolio/Projects";
+import { Skills } from "@/components/portfolio/Skills";
 import { About, Contact, Footer, Services, Stats, Testimonials } from "@/components/portfolio/Sections";
 import { useReveal } from "@/components/portfolio/useReveal";
 import { useSmoothScroll } from "@/components/portfolio/useSmoothScroll";
@@ -27,11 +28,12 @@ export default function Home() {
       <main>
         <Hero ready={true} /> {/* 👈 conditionally render */}
         <Projects />
-        <Stats />
+        <Skills />
+        {/* <Stats /> */}
         <Experience />
         <About />
         <Services />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Contact />
       </main>
       <Footer />

@@ -1,99 +1,118 @@
-// components/Projects.tsx
+﻿"use client";
+
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
-import { projects } from "@/data/projects";
 import Link from "next/link";
-import { SKILLS } from "./data";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { projects } from "@/data/projects";
+import { registerGsap } from "./useSmoothScroll";
+import styles from "./Projects.module.css";
 
 export function Projects() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<HTMLSpanElement>(null);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    const viewport = viewportRef.current;
+    const track = trackRef.current;
+    if (!section || !viewport || !track) return;
+    registerGsap();
+    const media = gsap.matchMedia();
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+      if (!distance()) return;
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => "+=" + distance(),
+          pin: true,
+          scrub: 0.65,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+      timeline.to(track, { x: () => -distance(), ease: "none" }, 0)
+        .fromTo(progressRef.current, { scaleX: 0 }, { scaleX: 1, ease: "none" }, 0);
+
+      // Keep offscreen project links accessible during keyboard navigation.
+      const handleFocus = (event: FocusEvent) => {
+        const card = (event.target as HTMLElement).closest<HTMLElement>("[data-project-card]");
+        const trigger = timeline.scrollTrigger;
+        if (!card || !trigger || !distance()) return;
+        viewport.scrollLeft = 0;
+        const offset = Math.min(distance(), Math.max(0, card.offsetLeft - track.offsetLeft));
+        trigger.scroll(trigger.start + (offset / distance()) * (trigger.end - trigger.start));
+        ScrollTrigger.update();
+        timeline.progress(trigger.progress);
+      };
+      track.addEventListener("focusin", handleFocus);
+      return () => track.removeEventListener("focusin", handleFocus);
+    });
+    let disposed = false;
+    document.fonts.ready.then(() => {
+      if (!disposed) ScrollTrigger.refresh();
+    });
+    return () => {
+      disposed = true;
+      media.revert();
+    };
+  }, []);
+
   return (
-    <section id="work" className="px-6 pt-24 sm:px-10 sm:pt-32">
-      <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
-        {/* Sticky left column */}
-        <div className="lg:w-[34%] lg:shrink-0">
-          <div className="lg:sticky lg:top-24">
-            <p className="eyebrow" data-reveal>
-              04 — Portfolio
-            </p>
-            <h2
-              className="display mt-5 text-[13vw] leading-[0.9] sm:text-[8vw] lg:text-[5.4vw]"
-              data-reveal
-            >
-              Selected
-              <br />
-              Projects
-            </h2>
-            <p
-              className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground"
-              data-reveal
-            >
-              A short selection of recent work. Each project shipped to production and is still
-              maintained or in active use today.
-            </p>
-            <div data-hero-fade className="mt-6 sm:mt-4 flex flex-wrap gap-x-1.5 sm:gap-x-2 gap-y-2 sm:gap-y-3 md:max-w-4/5 2xl:max-w-3/4">
-              {SKILLS.map((s) => (
-                <div
-                  key={s}
-                  className="rounded-full border border-[#161616] bg-surface/60 px-3 sm:px-4 h-6 sm:h-7 md:h-7 2xl:h-9 flex items-center text-[10px] sm:text-[12px] md:text-[12px] 2xl:text-[16px] font-medium text-text transition-colors duration-300 hover:border-accent hover:text-accent"
-                >
-                  {s}
-                </div>
-              ))}
-            </div>
-          </div>
+    <section id="work" ref={sectionRef} className={styles.section} aria-labelledby="projects-heading">
+      <header className={styles.header}>
+        <p className={styles.eyebrow}><span aria-hidden="true">•</span> Projects</p>
+        <div>
+          <h2 id="projects-heading" className={styles.heading}>
+            Creative <span>projects that<br />define</span> my work.
+          </h2>
+          <p className={styles.intro}>
+            A selection of digital experiences, from thoughtful websites to
+            ambitious platforms. Built with care, made to be used.
+          </p>
         </div>
-
-        {/* Scrollable right column */}
-        <div className="flex flex-1 flex-col gap-16 sm:gap-24">
-          {projects.map((p) => (
-            <article key={p.title} className="group" data-reveal>
-              <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-surface">
+      </header>
+      <div ref={viewportRef} className={styles.viewport}>
+        <div ref={trackRef} className={styles.track}>
+          {projects.map((project, index) => (
+            <article key={project.slug} className={styles.card} data-project-card>
+              <Link href={"/projects/" + project.slug} className={styles.imageLink} aria-label={"View " + project.title}>
                 <Image
-                  src={p.coverImage}
-                  alt={`${p.title} — ${p.tag}`}
-                  loading="lazy"
-                  width={1280}
-                  height={960}
-                  className="h-full w-full scale-105 object-top object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-100"
+                  src={project.coverImage}
+                  alt={project.title}
+                  fill
+                  sizes="(min-width: 1600px) 600px, (min-width: 900px) 38vw, (min-width: 600px) 62vw, 84vw"
+                  className={styles.image}
                 />
-              </div>
-
-              <div className="mt-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-                <h3 className="display text-3xl sm:text-4xl">{p.title}</h3>
-                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  {p.tag} · {p.year}
-                </p>
-              </div>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                {p.body}
-              </p>
-              <div className="mt-6 flex gap-6">
-                <Link
-                  href={`/projects/${p.slug}`}
-                  className="link-underline text-sm font-medium text-accent"
-                >
-                  See project
-                </Link>
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="link-underline text-sm font-medium text-accent"
-                >
-                  Live demo
-                </a>
-                {p.github &&
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="link-underline text-sm font-medium"
-                  >
-                    GitHub
-                  </a>}
+                <div className={styles.tags}>
+                  {project.tag.split(/\s*[|/]\s*/).map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+                <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
+                <span className={styles.open} aria-hidden="true">↗</span>
+              </Link>
+              <div className={styles.details}>
+                <h3><Link href={"/projects/" + project.slug}>{project.title.split(" | ")[0]}</Link></h3>
+                <p className={styles.description}>{project.body}</p>
+                <div className={styles.links}>
+                  <span>{project.year}</span>
+                  <Link href={"/projects/" + project.slug}>See project ↗</Link>
+                  <a href={project.demo} target="_blank" rel="noreferrer">Live demo ↗</a>
+                  {project.github && <a href={project.github} target="_blank" rel="noreferrer">GitHub ↗</a>}
+                </div>
               </div>
             </article>
           ))}
         </div>
+      </div>
+      <div className={styles.footer} aria-hidden="true">
+        <span>Scroll to explore</span>
+        <div className={styles.progress}><span ref={progressRef} /></div>
+        <span>{String(projects.length).padStart(2, "0")} projects</span>
       </div>
     </section>
   );
