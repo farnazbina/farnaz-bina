@@ -1,3 +1,4 @@
+import { saasImages } from "@/lib/saas-images";
 export type BlogBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
@@ -29,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     category: "Design & development",
     tags: ["UI design", "Frontend", "Design systems"],
     coverImage: {
-      src: "/images/saas_dashboard/overview.png",
+      src: saasImages.overview_png,
       alt: "Dashboard interface with an overview of projects and activity",
     },
     content: [

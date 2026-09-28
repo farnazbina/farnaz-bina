@@ -1,30 +1,39 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowUpRight, Braces, Layers3, Sparkles } from "lucide-react";
+import { ArrowUpRight, Braces, Layers3, Sparkles, Gauge, Users, PenTool } from "lucide-react";
 import styles from "./Skills.module.css";
 
 const skillGroups = [
   {
-    number: "01",
-    title: "The foundation",
-    subtitle: "Scalable applications. Thoughtful architecture.",
-    icon: Braces,
-    skills: ["React", "Next.js", "Vue.js", "Nuxt.js", "TypeScript", "JavaScript"],
+    number: "01", title: "Frontend engineering", icon: Braces,
+    subtitle: "Strong fundamentals and modern application frameworks.",
+    skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Next.js", "Vue.js", "Nuxt.js"],
   },
   {
-    number: "02",
-    title: "The experience",
-    subtitle: "Interfaces that look right and feel even better.",
-    icon: Sparkles,
-    skills: ["Tailwind CSS", "GSAP", "CSS Animations", "Responsive Design", "Accessibility", "Design Systems"],
+    number: "02", title: "Interface & motion", icon: Sparkles,
+    subtitle: "Responsive, accessible interfaces with thoughtful movement.",
+    skills: ["Tailwind CSS", "Responsive Design", "Accessibility (WCAG)", "Design Systems", "GSAP", "CSS Animations"],
   },
   {
-    number: "03",
-    title: "The details",
-    subtitle: "Everything that makes a product ready for real life.",
-    icon: Layers3,
-    skills: ["REST APIs", "Zustand", "React Hook Form", "Zod", "Authentication", "Performance", "Git"],
+    number: "03", title: "Application architecture", icon: Layers3,
+    subtitle: "Reusable components and reliable data flows.",
+    skills: ["REST APIs", "State Management", "Zustand", "React Query", "React Hook Form", "Zod", "Authentication"],
+  },
+  {
+    number: "04", title: "Quality & performance", icon: Gauge,
+    subtitle: "Maintainable code and fast, dependable experiences.",
+    skills: ["Performance Optimization", "Core Web Vitals", "Clean Code", "Testing & Debugging", "Browser DevTools", "SEO Fundamentals", "Cross-browser Compatibility"],
+  },
+  {
+    number: "05", title: "Teamwork & delivery", icon: Users,
+    subtitle: "Clear collaboration from planning to code review.",
+    skills: ["Scrum / Agile", "Jira / ClickUp", "Git / GitHub", "Code Review", "Technical Communication", "CI/CD Fundamentals"],
+  },
+  {
+    number: "06", title: "Design & user experience", icon: PenTool,
+    subtitle: "Bringing design intent into everyday interactions.",
+    skills: ["Figma", "UX Principles", "Usability", "Design Handoff", "Interaction Design", "Visual Hierarchy"],
   },
 ];
 
@@ -64,32 +73,20 @@ export function Skills() {
     <section id="skills" ref={rootRef} className={styles.section} aria-labelledby="skills-heading">
       <header className={styles.header} data-skill-reveal>
         <div>
-          <p className={styles.eyebrow}><span aria-hidden="true">✦</span> Behind the build</p>
-          <h2 id="skills-heading" className={styles.heading}>Technical mind.<br /><span>Creative instinct.</span></h2>
+          <p className={styles.eyebrow}><span aria-hidden="true">✦</span> Skills & expertise</p>
+          <h2 id="skills-heading" className={styles.heading}>The skills behind<br /><span>every build.</span></h2>
         </div>
-        <p className={styles.intro}>The tools are only the beginning. I bring them together to build interfaces that feel effortless, from the first interaction to the smallest detail.</p>
+        <p className={styles.intro}>From frontend fundamentals to performance, user experience, and team delivery ? the tools and practices I bring to a project.</p>
       </header>
 
-      <div className={styles.layout}>
-        <div className={styles.feature} data-skill-reveal>
-          <div className={styles.featureTop}><span>My creative toolkit</span><ArrowUpRight size={20} aria-hidden="true" /></div>
-          <div className={styles.orbit} aria-hidden="true">
-            <div className={styles.ringOuter} />
-            <div className={styles.ringInner} />
-            <span className={styles.axis} />
-            <div className={styles.core}><Braces strokeWidth={1} /><span>built with care</span></div>
-            <span className={`${styles.orbitTag} ${styles.react}`}>React <span>↗</span></span>
-            <span className={`${styles.orbitTag} ${styles.typescript}`}>TypeScript</span>
-            <span className={`${styles.orbitTag} ${styles.next}`}>Next.js</span>
-            <span className={`${styles.orbitTag} ${styles.vue}`}>Vue / Nuxt</span>
-            <span className={styles.star}>✦</span>
-          </div>
-          <div className={styles.featureBottom}>
-            <p>Where logic<br />meets <em>feeling.</em></p>
-            <span>ENGINEERING × DESIGN</span>
-          </div>
-        </div>
+      <div className={styles.stack} data-skill-reveal>
+        <p className={styles.stackLabel}>Core stack</p>
+        <ul className={styles.stackList} aria-label="Core technologies">
+          {["React", "Next.js", "Vue.js", "Nuxt.js", "TypeScript"].map((skill) => <li key={skill}>{skill}</li>)}
+        </ul>
+      </div>
 
+      <div className={styles.layout}>
         <div className={styles.groups}>
           {skillGroups.map(({ number, title, subtitle, icon: Icon, skills }) => (
             <article key={number} className={styles.group} data-skill-reveal>

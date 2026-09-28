@@ -1,3 +1,4 @@
+import { saasImages } from "@/lib/saas-images";
 // data/projects.ts
 
 export interface Project {
@@ -9,6 +10,7 @@ export interface Project {
   coverImage: string;
   content: {
     introduction: string;
+    delivery?: { title: string; items: { title: string; description: string }[] };
     features?: { title: string; description: string }[];
     techStack: Record<string, string>;
     challenges: { title: string; description: string }[];
@@ -41,185 +43,47 @@ export const projects: Project[] = [
     github: "",
     createdDate: "2026-08-31",
     content: {
-      introduction:
-        `A scalable healthcare platform built for Samat Body Analysis & Checkup Clinic, enabling patients to book appointments online across multiple branches and with multiple doctors throughout Iran.
-        The platform combined patient booking, doctor scheduling, payments, invoices, questionnaires, reviews, and operational analytics into a unified system for patients, doctors, receptionists, and administrators.`,
+      introduction: "Checkup Salamat is a healthcare appointment booking and clinic management platform for multiple branches in Iran. I built the frontend with Vue 3, Nuxt.js and TypeScript, connecting patient booking with the daily workflows of doctors, receptionists and administrators.",
       role: {
         title: "Frontend Engineer",
-        description: `I was responsible for the frontend development and ongoing maintenance of the platform.
-
-        I worked closely with backend engineers and designers to transform business requirements and UI designs into a responsive, scalable, and maintainable product.`
+        description: "Owned frontend development and ongoing maintenance, working with designers and backend engineers to deliver responsive interfaces, API integrations and reusable components.",
       },
       responsibilities: [
-        "Developed the complete frontend of the platform.",
-        "Built dedicated dashboards for Administrators, Doctors, Patients, and Receptionists.",
-        "Implemented the online appointment booking experience.",
-        "Developed doctor scheduling and availability management.",
-        "Built reusable and modular UI components.",
-        "Implemented payment, deposit, discount, and invoice workflows.",
-        "Developed analytics dashboards using interactive charts.",
-        "Implemented patient questionnaires, surveys, ratings, and reviews.",
-        "Integrated frontend features with backend APIs.",
-        "Maintained and continuously improved the platform.",
-        "Collaborated with backend engineers and designers throughout development.",
-        "Onboarded new developers and helped them understand the project architecture and workflow.",
-        "Contributed to documentation and design-system consistency.",
-        "Worked with a feature-based task structure and dedicated pull requests.'",
+        "Owned the frontend for patient booking and dashboards for doctors, receptionists, administrators and patients.",
+        "Integrated backend APIs for appointment scheduling, deposits, discounts, invoices and operational analytics.",
+        "Translated designs and business requirements into responsive Vue components, shared UI patterns and maintainable TypeScript code.",
+        "Collaborated with backend engineers and designers throughout feature development and ongoing product maintenance.",
+        "Contributed to documentation and developer onboarding, explaining the architecture, components and feature workflow.",
       ],
-      keyfeatures: [
-        {
-          title: "Multi-Branch Appointment Booking",
-          subtitle: "The booking system was designed to support multiple clinic branches and doctors while allowing patients to find and book available appointments.",
-          list: [
-            "Select a branch",
-            "Select a doctor",
-            "View available appointment slots",
-            "Find the next available appointment",
-            "Book appointments for one or multiple people",
-            "Reschedule appointments",
-            "View appointment details and status"
-          ],
-          note: "",
-          description: "Patients could:"
-        },
-        {
-          title: "Doctor Scheduling",
-          subtitle: "Doctors had dedicated scheduling tools for managing their availability.",
-          list: [
-            "Weekly working schedules",
-            "Temporary schedules for specific date ranges",
-            "Appointment calendars",
-            "Availability management",
-            "Appointment rescheduling"
-          ],
-          note: "This allowed the clinic to manage both recurring schedules and exceptional working hours.",
-          description: "The system supported:"
-        },
-        {
-          title: "Payment & Invoice Management",
-          subtitle: "The payment workflow required more than a standard checkout process.",
-          list: [],
-          note: `Appointment → Deposit → Discount → Payment → Final Invoice
-
-Patients could apply discount codes and pay their required deposit online.
-
-The system also supported card-to-card payments, allowing users to submit their payment receipt for verification.
-
-Administrators and receptionists could then review payment information and track the financial status of each appointment`,
-          description: "The platform handled:"
-        },
-        {
-          title: "Analytics Dashboards",
-          subtitle: "Dedicated dashboards were developed for administrators and doctors to monitor clinic operations.",
-          list: [
-            "Financial performance",
-            "Number of patients",
-            "Number of appointments",
-            "Branch performance",
-            "Doctor activity",
-            "Administrative activity",
-          ],
-          note: "Interactive charts and visualizations made large amounts of operational data easier to understand and monitor.",
-          description: "The dashboards provided insights into:"
-        },
-        {
-          title: "Questionnaires & Patient Feedback",
-          subtitle: "The platform included a complete feedback workflow connected to appointments.",
-          list: [],
-          note: "Doctors and administrators could then review responses, ratings, and comments through their respective dashboards.",
-          description: "Patients could complete questionnaires and surveys related to their appointments and rate their experience."
-        },
-        {
-          title: "Appointment Activity History",
-          subtitle: "Each appointment contained a detailed history of actions performed by staff members.",
-          list: [
-            "Appointment changes",
-            "Schedule modifications",
-            "Invoice information",
-            "Payment receipts",
-            "Staff activities related to the appointment"
-          ],
-          note: "Users with the appropriate permissions could view:",
-          description: "Users with the appropriate permissions could view:"
-        },
-        {
-          title: "Responsive Design",
-          subtitle: "The platform was designed to work across different screen sizes and devices.",
-          list: [],
-          note: `Mobile · Tablet · Laptop · Large Desktop
-            Special attention was given to complex interfaces such as appointment calendars, dashboards, tables, and administrative panels to ensure they remained usable on smaller screens.`,
-          description: "The interfaces were optimized for:"
-        },
-        {
-          title: "Design System & Reusability",
-          subtitle: "A reusable component architecture and consistent design system were established across the platform. Common UI patterns were standardized and reused throughout different dashboards and features.",
-          list: [
-            "Reduce duplicated code",
-            "Improve UI consistency",
-            "Speed up feature development",
-            "Simplify maintenance",
-            "Make onboarding new developers easier"
-          ],
-          note: "",
-          description: "This helped:"
-        },
-        {
-          title: "Development Workflow",
-          subtitle: "The project followed a structured feature-based development workflow.",
-          list: [],
-          note: `This made the development process easier to review, maintain, and track as the platform continued to evolve.
-
-I also contributed to project documentation and helped onboard new developers by introducing them to the architecture, components, development workflow, and project conventions.`,
-          description: "Features were divided into independent tasks and implemented through dedicated pull requests."
-        }
+      delivery: {
+        title: "Team collaboration and engineering ownership",
+        items: [
+          { title: "Cross-functional collaboration", description: "I worked closely with designers and backend engineers to turn clinic requirements into usable frontend workflows. This involved connecting interface decisions with API data and the different needs of patients, doctors, receptionists and administrators." },
+          { title: "Clean code and reusable components", description: "I used a component-based architecture, TypeScript and centralized Pinia state to keep the frontend maintainable. Shared UI patterns reduced duplicated logic across dashboards and made changes easier to apply consistently as the product grew." },
+          { title: "Feature-based delivery", description: "Development was organized into focused feature tasks and dedicated pull requests. This kept changes easier to review and track, while separating individual improvements from the wider scheduling, payment and dashboard workflows." },
+          { title: "Documentation and knowledge sharing", description: "I contributed to project documentation and helped onboard developers to the architecture, component conventions and development workflow. My responsibility extended beyond shipping screens to maintaining a codebase other team members could understand and extend." },
+        ],
+      },
+      features: [
+        { title: "Online appointment booking", description: "Branch and doctor selection, available time slots, multi-person bookings and rescheduling in one guided flow." },
+        { title: "Clinic operations", description: "Recurring and temporary doctor schedules, role-specific dashboards and appointment activity history." },
+        { title: "Payments and insights", description: "Deposits, discounts, invoices and receipt verification, supported by ApexCharts analytics and patient feedback." },
       ],
       techStack: {
-        Frontend: "Vue3, Nuxt.js, TypeScript",
-        "UI & Styling": "Tailwind CSS",
-        "State Management": "Pinia",
-        "Data Visualization": "ApexCharts",
+        Frontend: "Vue 3 / Nuxt.js / TypeScript",
+        Styling: "Tailwind CSS",
+        "State management": "Pinia",
+        Analytics: "ApexCharts",
       },
       challenges: [
-        {
-          title: "1) Complex Scheduling Logic",
-          description:
-            `Supporting multiple branches, doctors, recurring schedules, temporary schedules, and simultaneous bookings made appointment availability one of the most complex parts of the platform.
-              The frontend needed to present this complexity through a simple and understandable booking experience.`
-        },
-        {
-          title: "2) Dynamic Financial Calculations",
-          description:
-            `Appointment payments could include deposits, discounts, and final invoice amounts.
-
-The frontend had to accurately reflect different payment states and provide users with clear financial information throughout the booking process.`
-        },
-        {
-          title: "3) Multiple Role-Based Dashboards",
-          description:
-            `The platform served four major user groups:
-
-Patients · Doctors · Receptionists · Administrators
-
-Each role required different workflows, permissions, data, and interfaces while maintaining a consistent design language across the product.`
-        },
-        {
-          title: "4) Large Amounts of Operational Data",
-          description: `Administrators and doctors needed to monitor large amounts of data related to appointments, patients, branches, doctors, staff, and financial activity.
-
-The challenge was transforming this data into clear dashboards that allowed users to quickly understand the current state of the clinic.`
-        },
-        {
-          title: "5) Maintainable Frontend Architecture",
-          description: `As the platform grew, maintaining consistency and avoiding duplicated UI logic became increasingly important.
-
-I used reusable components, centralized state management, consistent design patterns, and modular feature development to keep the frontend maintainable and scalable.`
-        }
+        { title: "Making complex scheduling understandable", description: "Appointment availability depended on the selected branch, doctor and schedule, including recurring hours and temporary changes. I translated these rules into a guided booking interface and calendar views so patients could choose a slot while staff managed more detailed scheduling workflows." },
+        { title: "Keeping a growing product consistent", description: "Four user roles needed different screens without fragmenting the product. I combined reusable components, centralized state and consistent interface patterns, while making deposits, discounts and invoice states explicit in payment screens. This balanced role-specific requirements with a maintainable shared frontend." },
       ],
       results: [
-        "The final product was a scalable healthcare platform that brought appointment booking, doctor scheduling, payments, invoices, patient feedback, and operational analytics into a single system.",
-        "The platform enabled the clinic to manage complex multi-branch operations while providing patients with a simple online booking experience.",
-        "From a frontend perspective, the reusable component architecture, design system, TypeScript-based development, and modular feature structure created a maintainable foundation for continuously adding new features and improving the product.",
-      ]
+        "Delivered a production platform connecting online booking with multi-branch clinic operations.",
+        "Supported patients, doctors, receptionists and administrators through dedicated workflows.",
+        "Created a reusable frontend foundation for ongoing features and maintenance.",
+      ],
     },
     gallery: [
       "/images/checkup/booking.png",
@@ -234,81 +98,64 @@ I used reusable components, centralized state management, consistent design patt
     subtitle: "",
     tag: "React / Next.js",
     year: "2026",
-    coverImage: "/images/saas_dashboard/saas_dashboard.png",
-    body: "A unified project management dashboard with task tracking, analytics, and timeline view.",
+    coverImage: saasImages.overview_png,
+    body: "A self-made React and Next.js dashboard with Kanban tasks, project analytics, client records and invoices.",
     demo: "https://saas-dashboard-iota-eight.vercel.app/overview",
     github: "https://github.com/farnazbina/saas-dashboard",
     createdDate: "2026-01-15",
     content: {
-      introduction:
-        "This dashboard was built to unify project tracking, task management, client handling, transactions, and analytics into one seamless interface. Teams no longer need to switch between multiple tools.",
+      introduction: "A self-made, independently developed React and Next.js project management dashboard. I built this personal project to demonstrate frontend engineering across Kanban task management, analytics, client records and invoicing, using TypeScript and a reusable component architecture.",
+      role: {
+        title: "Independent Frontend Developer",
+        description: "As the sole developer of this self-directed project, I owned the frontend implementation, component structure, application state and responsive layouts. It demonstrates my ability to take a product idea through implementation and deliver a working demo with source code available for review.",
+      },
+      responsibilities: [
+        "Independently developed project, task, client and invoice screens within a consistent dashboard layout.",
+        "Connected Kanban interactions and analytics with Zustand and React Context.",
+        "Built reusable forms and interface components with Tailwind CSS and shadcn/ui.",
+        "Used React Hook Form and Zod for structured form handling and validation.",
+        "Organized the frontend for maintainability and future API integration, with a public demo and GitHub repository.",
+      ],
+      delivery: {
+        title: "Independent ownership and code quality",
+        items: [
+          { title: "Self-made project, end-to-end ownership", description: "I built this dashboard independently as a personal portfolio project. I took responsibility for translating the product idea into connected screens, selecting the frontend tools and implementing the workflows. The project demonstrates initiative, self-directed learning and practical problem-solving." },
+          { title: "Clean, maintainable React code", description: "I used reusable components, TypeScript and shared interface patterns to keep repeated dashboard behavior consistent. Separating shared application state from local UI state helped keep components focused and made the codebase easier to extend." },
+          { title: "Forms and interaction design", description: "React Hook Form and Zod support form handling and validation, while dnd-kit supports task movement between Kanban columns. These choices let me focus on clear feedback, visible task status and consistent interactions across the dashboard." },
+          { title: "Transparent scope and future development", description: "This is a frontend portfolio project with a working demo and public source code. API integration and authentication remain future extensions. It showcases independent engineering ownership; my experience collaborating with designers and backend teams is demonstrated separately in Checkup Salamat." },
+        ],
+      },
       features: [
-        {
-          title: "Project & Task Management",
-          description:
-            "Create, edit, and delete projects. Kanban board with drag-and-drop for tasks (Todo, In Progress, In Review, Blocked, Done).",
-        },
-        {
-          title: "Client & Transaction Tracking",
-          description:
-            "Manage client profiles, link them to projects, and track financial transactions with payment status.",
-        },
-        {
-          title: "Analytics & Charts",
-          description:
-            "Visualize task status distribution, project progress, and team performance with interactive Recharts.",
-        },
-        {
-          title: "Timeline & Gantt View",
-          description:
-            "Project timeline with a custom Gantt chart to identify overlaps and plan resources effectively.",
-        },
+        { title: "Projects and Kanban tasks", description: "Manage projects and move tasks between workflow stages with drag-and-drop. Priorities, due dates and progress stay visible on each card." },
+        { title: "Analytics at a glance", description: "Recharts visualizations summarize project progress and task distribution, alongside an overview of recent clients." },
+        { title: "Clients and invoices", description: "Keep client profiles, linked projects and invoice payment status in the same workspace." },
       ],
       techStack: {
-        Framework: "Next.js 14 (App Router)",
+        Framework: "React / Next.js App Router",
         Language: "TypeScript",
-        Styling: "Tailwind CSS + Shadcn/ui",
-        "State Management": "Zustand + React Context",
-        Charts: "Recharts",
-        "Drag & Drop": "@dnd-kit/core",
-        Forms: "React Hook Form + Zod",
-        Icons: "Lucide React",
+        Styling: "Tailwind CSS / shadcn/ui",
+        "State management": "Zustand / React Context",
+        Visualization: "Recharts",
+        Interactions: "dnd-kit / React Hook Form / Zod",
       },
       challenges: [
-        {
-          title: "Complex State Management",
-          description:
-            "Handling interrelated data (projects, tasks, clients, transactions) required a normalized state. Used Zustand for global state and Context for local UI state.",
-        },
-        {
-          title: "Smooth Drag & Drop",
-          description:
-            "Implemented drag-and-drop with @dnd-kit to move tasks between columns without lag, with optimistic UI updates.",
-        },
-        {
-          title: "Responsive Design",
-          description:
-            "Used Tailwind's grid and flex utilities to build a fully responsive layout that adapts to mobile, tablet, and desktop.",
-        },
+        { title: "Keeping connected data consistent", description: "Projects, tasks and clients are related, so keeping their state in isolated screens would make updates difficult to follow. I used Zustand for shared application data and React Context for local interface state, creating a clearer separation between product data and presentation behavior." },
+        { title: "Making dense interfaces easy to use", description: "A dashboard needs to show detail without making every screen overwhelming. I combined responsive grids, explicit status labels and reusable form patterns with drag-and-drop task updates. Recharts provided a visual summary of project progress alongside the more detailed task and client screens." },
       ],
       results: [
-        "Saves an estimated 2+ hours per week per team member.",
-        "Eliminates the need for 4 separate tools.",
-        "Provides real-time visibility into blocked tasks and bottlenecks.",
-        "Positive feedback from test users on UI/UX.",
+        "Brought project tracking, task management, client records and invoicing into a unified dashboard.",
+        "Made project progress and task distribution visible through charts and a Kanban board.",
+        "Established a modular frontend foundation for future API integration and authentication.",
       ],
-      conclusion:
-        "This project taught me how to build a complex, data-driven dashboard with a clean UX. The modular architecture allows for easy addition of new features like real API integration and authentication.",
     },
     gallery: [
-      "/images/saas_dashboard/saas_dashboard.png",
-      "/images/saas_dashboard/overview.png",
-      "/images/saas_dashboard/projects.png",
-      "/images/saas_dashboard/tasks.png",
-      "/images/saas_dashboard/clients.png",
-      "/images/saas_dashboard/setting.png",
-      "/images/saas_dashboard/invoices.png",
-      "/images/saas_dashboard/teams.png",
+      saasImages.overview_png,
+      saasImages.projects_png,
+      saasImages.tasks_png,
+      saasImages.clients_png,
+      saasImages.settings_png,
+      saasImages.invoices_png,
+      saasImages.teams_png,
     ],
   },
   {

@@ -1,3 +1,4 @@
+import { saasImages } from "@/lib/saas-images";
 import project1 from "@/assets/projects/chechup_salamat.webp";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -46,7 +47,7 @@ export const PROJECTS = [
     year: "2026",
     tag: "SaaS Dashboard",
     body: "A comprehensive project management dashboard for a SaaS platform, featuring real-time collaboration tools, task tracking, and analytics to enhance team productivity and project visibility.",
-    image: '/projects/saas_dashboard.png',
+    image: saasImages.overview_png,
     demo: "",
     github: "",
   },
