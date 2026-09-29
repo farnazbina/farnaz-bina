@@ -1,6 +1,6 @@
 ﻿.section {
   --gutter: clamp(24px, 7vw, 132px);
-  height: 100svh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   padding: clamp(76px, 11svh, 120px) 0 20px;
@@ -9,13 +9,13 @@
 .header { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 54px;padding: 0 clamp(24px, 7vw, 132px); }
 .eyebrow { padding-top: 12px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; }
 .eyebrow span { color: #b29a63; margin-right: 9px; }
-.heading { font-family: var(--font-display); font-size: clamp(36px, 3.4vw, 64px); font-weight: 600; line-height: 1.4; }
+.heading { font-family: var(--font-display); font-size: clamp(36px, 3.4vw, 64px); font-weight: 600; line-height: 1.3; }
 .heading span { color: #b29a63; }
 .intro { max-width: 420px; padding-bottom: 5px; font-size: 16px; line-height: 1.85; color: var(--muted-foreground); }
-.viewport { overflow: hidden; flex: 1; min-height: 0; margin-top: 20px; padding-bottom: 20px; }
-.track { position: relative; display: flex; gap: clamp(18px, 2vw, 40px); width: max-content; height: 100%; padding: 0 var(--gutter); }
-.card { min-width: 0; flex: 0 0 auto; width: 84vw; height: 100%; display: flex; flex-direction: column; }
-.imageLink { position: relative; display: block; overflow: hidden; flex: 1; min-height: 0; border-radius: 14px; background: var(--surface); }
+.viewport { overflow: visible; margin-top: 20px; }
+.track { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(24px, 3vw, 40px); padding: 0 var(--gutter); }
+.card { min-width: 0; display: flex; flex-direction: column; }
+.imageLink { position: relative; display: block; overflow: hidden; flex: none; aspect-ratio: 16 / 10; border-radius: 14px; background: var(--surface); }
 .image { object-fit: cover; object-position: top; transition: transform .8s ease; }
 .imageLink:hover .image { transform: scale(1.035); }
 .imageLink::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, #0005, transparent 28%, transparent 80%, #0004); }
@@ -25,25 +25,11 @@
 .open { position: absolute; z-index: 1; bottom: 14px; left: 18px; color: white; font-size: 24px; }
 .details { flex-shrink: 0; padding-top: 16px; }
 .details h3 { font-size: 21px; font-weight: 600; letter-spacing: -.035em; line-height: 1.15; }
-.description { margin-top: 8px; max-width: 440px; font-size: 12px; line-height: 1.6; color: var(--muted-foreground); }
+.description { margin-top: 8px; max-width: 440px; font-size: 14px; line-height: 1.6; color: var(--muted-foreground); height: 70px; }
 .links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; font-size: 11px; }
 .links > span { color: var(--muted-foreground); margin-right: auto; }
 .links a:hover { color: var(--accent); }
 .section a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.footer { display: flex; flex-shrink: 0; align-items: center; gap: 16px; padding: 18px var(--gutter) 0; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted-foreground); }
-.progress { height: 1px; flex: 1; background: var(--border); }
-.progress span { display: block; height: 100%; background: #b29a63; transform: scaleX(0); transform-origin: left; }
-
-@media (min-width: 600px) {
-  .header { grid-template-columns: 1fr 2fr; }
-  .card { width: 62vw; }
-  .card:nth-child(even) { padding-top: clamp(12px, 4svh, 32px); }
-}
-
-@media (min-width: 900px) {
-  .card { width: clamp(340px, 38vw, 600px); }
-}
-
 @media (max-width: 599px) {
   .heading { font-size: clamp(28px, 8vw, 38px); }
   .eyebrow { padding-top: 0; }
@@ -51,18 +37,17 @@
   .description { display: none; }
   .details h3 { font-size: 19px; }
   .links { gap: 8px 12px; }
+  .header { flex-wrap: wrap;}
 }
 
 /* Keep the image and project links visible on short laptops and landscape phones. */
 @media (max-height: 650px) {
   .section { padding-top: 72px; padding-bottom: 12px; }
-  .header { gap: 8px; margin-bottom: 14px; }
+  .header { gap: 8px; margin-bottom: 14px;  }
   .heading { font-size: clamp(24px, 5svh, 34px); }
   /* .intro, .description { display: none; } */
   .details { padding-top: 10px; }
   .details h3 { font-size: 18px; }
-  .footer { padding-top: 12px; font-size: 9px; }
-  .card:nth-child(even) { padding-top: 12px; }
 }
 
 @media (max-height: 450px) {
@@ -74,9 +59,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .viewport { overflow-x: auto; }
-  .progress { display: none; }
-  .footer { justify-content: space-between; }
   .image { transition: none; }
   .imageLink:hover .image { transform: none; }
 }

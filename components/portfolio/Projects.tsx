@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -11,83 +11,42 @@ import styles from "./Projects.module.css";
 
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
-  const viewportRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const progressRef = useRef<HTMLSpanElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const section = sectionRef.current;
-    const viewport = viewportRef.current;
-    const track = trackRef.current;
-    if (!section || !viewport || !track) return;
+    if (!section) return;
     registerGsap();
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-      if (!distance()) return;
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => "+=" + distance(),
-          pin: true,
-          scrub: 0.65,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-      timeline.to(track, { x: () => -distance(), ease: "none" }, 0)
-        .fromTo(progressRef.current, { scaleX: 0 }, { scaleX: 1, ease: "none" }, 0);
 
-      // Keep offscreen project links accessible during keyboard navigation.
-      const handleFocus = (event: FocusEvent) => {
-        const card = (event.target as HTMLElement).closest<HTMLElement>("[data-project-card]");
-        const trigger = timeline.scrollTrigger;
-        if (!card || !trigger || !distance()) return;
-        viewport.scrollLeft = 0;
-        const offset = Math.min(distance(), Math.max(0, card.offsetLeft - track.offsetLeft));
-        trigger.scroll(trigger.start + (offset / distance()) * (trigger.end - trigger.start));
-        ScrollTrigger.update();
-        timeline.progress(trigger.progress);
-      };
-      track.addEventListener("focusin", handleFocus);
-      return () => track.removeEventListener("focusin", handleFocus);
-    });
-    let disposed = false;
-    document.fonts.ready.then(() => {
-      if (!disposed) ScrollTrigger.refresh();
-    });
-    return () => {
-      disposed = true;
-      media.revert();
-    };
+    const ctx = gsap.context(() => {
+      const cards = section.querySelectorAll<HTMLElement>("[data-project-card]");
+      cards.forEach((card) => {
+        gsap.from(card, {
+          y: 48,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: { trigger: card, start: "top 88%", once: true },
+        });
+      });
+    }, section);
+
+    ScrollTrigger.refresh();
+    return () => ctx.revert();
   }, []);
 
   return (
     <section id="work" ref={sectionRef} className={styles.section} aria-labelledby="projects-heading">
-      {/* <header className={styles.header}>
-        <p className={styles.eyebrow}><span aria-hidden="true">•</span> Projects</p>
-        <div>
-          <h2 id="projects-heading" className={styles.heading}>
-            Creative <span>projects that<br />define</span> my work.
-          </h2>
-          <p className={styles.intro}>
-            A selection of digital experiences, from thoughtful websites to
-            ambitious platforms. Built with care, made to be used.
-          </p>
-        </div>
-      </header> */}
-      <header className={styles.header} data-skill-reveal>
+      <header className={styles.header}>
         <div>
           <p className={styles.eyebrow}><span aria-hidden="true">✦</span> Projects</p>
-          <h2 id="skills-heading" className={styles.heading}>Creative <span>projects that<br />define</span> my work.</h2>
+          <h2 id="projects-heading" className={styles.heading}>Creative <span>projects that<br />define</span> my work.</h2>
         </div>
         <p className={styles.intro}>
             A selection of digital experiences, from thoughtful websites to
             ambitious platforms. Built with care, made to be used.</p>
       </header>
-      <div ref={viewportRef} className={styles.viewport}>
-        <div ref={trackRef} className={styles.track}>
+      <div className={styles.viewport}>
+        <div className={styles.track}>
           {projects.map((project, index) => (
             <article key={project.slug} className={styles.card} data-project-card>
               <Link href={"/projects/" + project.slug} className={styles.imageLink} aria-label={"View " + project.title}>
@@ -117,11 +76,6 @@ export function Projects() {
             </article>
           ))}
         </div>
-      </div>
-      <div className={styles.footer} aria-hidden="true">
-        <span>Scroll to explore</span>
-        <div className={styles.progress}><span ref={progressRef} /></div>
-        <span>{String(projects.length).padStart(2, "0")} projects</span>
       </div>
     </section>
   );
