@@ -33,7 +33,8 @@ export function Nav() {
           ))}
         </nav>
         <a
-          href=""
+          href="/React-developer-farnazbina.pdf"
+          download="React-developer-farnazbina.pdf"
           className="hidden md:flex text-xs sm:text-sm font-medium rounded-full border border-solid border-accent transition-all duration-300 hover:bg-accent hover:text-accent-foreground px-5 py-3 sm:px-6 sm:py-3 md:px-7 md:py-3"
         >
           Download CV
@@ -63,16 +64,16 @@ export function Nav() {
       </header>
 
       <div
-  id="mobile-menu"
-  inert={!open}
-  ref={overlay}
-  style={{
-    clipPath: open ? "inset(0% 0% 0% 0%)" : "inset(0% 0% 100% 0%)",
-    pointerEvents: open ? "auto" : "none",
-    transition: "clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1)",
-  }}
-  className="fixed inset-0 z-40 flex flex-col justify-between bg-foreground px-6 pb-10 pt-28 text-background sm:px-10"
->
+        id="mobile-menu"
+        inert={!open}
+        ref={overlay}
+        style={{
+          clipPath: open ? "inset(0% 0% 0% 0%)" : "inset(0% 0% 100% 0%)",
+          pointerEvents: open ? "auto" : "none",
+          transition: "clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1)",
+        }}
+        className="fixed inset-0 z-40 flex flex-col justify-between bg-foreground px-6 pb-10 pt-28 text-background sm:px-10"
+      >
         <nav className="flex flex-col gap-2">
           {links.map((l) => (
             <span key={l.href} className="overflow-hidden py-1">
