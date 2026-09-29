@@ -66,10 +66,7 @@ My focus is on writing clean, maintainable code that helps startups and agencies
             </p>
           </div>
           <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8 text-sm" data-reveal data-reveal-stagger>
-            {/* <div>
-              <dt className="text-muted-foreground">Based in</dt>
-              <dd className="mt-1 font-medium">Lisbon, Portugal</dd>
-            </div> */}
+            
             <div>
               <dt className="text-muted-foreground">Focus</dt>
               <dd className="mt-1 font-medium">React · Next.js · TypeScript · Motion</dd>
@@ -149,7 +146,6 @@ export function Contact() {
     <section id="contact" className="px-6 py-24 sm:px-10 sm:py-32">
       <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
 
-        {/* LEFT COLUMN — Intro (unchanged) */}
         <div>
           <p className="eyebrow" data-reveal>
             06 — Contact
@@ -171,12 +167,10 @@ export function Contact() {
           </p>
         </div>
 
-        {/* RIGHT COLUMN — Contact Info (replaces the form) */}
         <div
           className="flex flex-col justify-center space-y-8 rounded-4xl border border-border p-8 shadow-soft"
           data-reveal
         >
-          {/* Email */}
           <div>
             <p className="eyebrow">Direct email</p>
             <a
@@ -187,10 +181,8 @@ export function Contact() {
             </a>
           </div>
 
-          {/* Divider */}
           <div className="h-px w-full bg-border" />
 
-          {/* Social Links */}
           <div>
             <p className="eyebrow">Find me on</p>
             <div className="mt-3 flex flex-wrap gap-6 text-sm">

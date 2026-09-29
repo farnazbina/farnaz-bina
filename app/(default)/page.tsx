@@ -4,12 +4,10 @@ import { Hero } from "@/components/portfolio/Hero";
 import { Nav } from "@/components/portfolio/Nav";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
-import { About, Contact, Footer, Services, Stats, Testimonials } from "@/components/portfolio/Sections";
-import { useReveal } from "@/components/portfolio/useReveal";
-import { useSmoothScroll } from "@/components/portfolio/useSmoothScroll";
+import { About, Contact, Footer, Services } from "@/components/portfolio/Sections";
 
 export const metadata: Metadata = {
-  title: "Farnaz Bina — Frontend Developer Portfolio",
+  title: "Farnaz Bina — Frontend Engineer Portfolio",
   description:
     "Farnaz Bina — Frontend Engineer with 5 years experience in React, Next.js and Vue.js. Building healthcare, fintech and SaaS applications for global teams.",
   alternates: {
@@ -18,22 +16,16 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-
-  // useSmoothScroll(true);
-  // const revealRef = useReveal<HTMLDivElement>(true);
   return (
     <div className="relative">
-      {/* {!loaded && <Loader onComplete={onComplete} />} */}
       <Nav />
       <main>
-        <Hero ready={true} /> {/* 👈 conditionally render */}
+        <Hero ready={true} /> 
         <Projects />
         <Skills />
-        {/* <Stats /> */}
         <Experience />
         <About />
         <Services />
-        {/* <Testimonials /> */}
         <Contact />
       </main>
       <Footer />

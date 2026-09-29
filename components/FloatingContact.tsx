@@ -45,7 +45,6 @@ export function FloatingContact() {
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-            {/* پنل بازشونده */}
             {isOpen && (
                 <div className="mb-4 w-64 rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-5 animate-in slide-in-from-bottom-5 duration-300">
                     <div className="flex items-center justify-between mb-4">
@@ -84,7 +83,6 @@ export function FloatingContact() {
                 </div>
             )}
 
-            {/* دکمه اصلی */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"

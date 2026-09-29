@@ -1,5 +1,4 @@
 import { saasImages } from "@/lib/saas-images";
-// app/projects/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -9,14 +8,11 @@ import { getProjectBySlug, projects } from "@/data/projects";
 import Gallery from "@/components/CaseStudy/Gallery";
 import ContentSection from "@/components/CaseStudy/ContentSection";
 
-// تولید مسیرهای استاتیک
 export async function generateStaticParams() {
     return projects.map((project) => ({
         slug: project.slug,
     }));
 }
-
-// توجه: params را به‌صورت Promise دریافت می‌کنیم
 interface PageProps {
     params: Promise<{ slug: string }>;
 }
@@ -42,7 +38,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ProjectPage({ params }: PageProps) {
-    // await کردن params
     const { slug } = await params;
 
     const project = getProjectBySlug(slug);
@@ -83,7 +78,6 @@ export default async function ProjectPage({ params }: PageProps) {
             </header>
 
             <h2 className="text-xl font-semibold tracking-tight">{subtitle}</h2>
-            {/* محتوای اصلی */}
             <article className="prose prose-lg dark:prose-invert max-w-none">
                 <ContentSection title="Overview">
                     <p>{content.introduction}</p>
@@ -117,19 +111,6 @@ export default async function ProjectPage({ params }: PageProps) {
                         ))}
                     </ul>
                 </ContentSection>
-
-                {/* <ContentSection title="Key Features">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {content.features.map((feature, i) => (
-                            <div key={i} className="border rounded-lg p-4 shadow-sm">
-                                <h3 className="text-lg font-semibold">{feature.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400">
-                                    {feature.description}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </ContentSection> */}
 
                 <ContentSection title="Technical Challenges">
                     <div className="space-y-4">
@@ -165,7 +146,6 @@ export default async function ProjectPage({ params }: PageProps) {
                 </ContentSection>
             </article>
 
-            {/* گالری تصاویر */}
             {gallery && gallery.length > 0 && <Gallery images={gallery} coverImage={coverImage} />}
         </main>
         </>

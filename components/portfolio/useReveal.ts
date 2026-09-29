@@ -4,9 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { registerGsap } from "./useSmoothScroll";
 
-/**
- * Fades + slides in every [data-reveal] descendant as it enters the viewport.
- */
 export function useReveal<T extends HTMLElement>(enabled: boolean) {
   const ref = useRef<T | null>(null);
 
