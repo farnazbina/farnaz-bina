@@ -6,13 +6,13 @@
   padding: clamp(76px, 11svh, 120px) 0 20px;
   background: var(--background);
 }
-.header { display: grid; flex-shrink: 0; gap: 16px; padding: 0 var(--gutter); margin-bottom: clamp(18px, 4svh, 44px); }
+.header { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 54px;padding: 0 clamp(24px, 7vw, 132px); }
 .eyebrow { padding-top: 12px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; }
 .eyebrow span { color: #b29a63; margin-right: 9px; }
-.heading { font-family: var(--font-display); font-size: clamp(36px, 3.4vw, 64px); font-weight: 600; letter-spacing: -.045em; line-height: 1.02; }
+.heading { font-family: var(--font-display); font-size: clamp(36px, 3.4vw, 64px); font-weight: 600; line-height: 1.4; }
 .heading span { color: #b29a63; }
-.intro { max-width: 440px; margin-top: 16px; color: var(--muted-foreground); font-size: 13px; line-height: 1.7; }
-.viewport { overflow: hidden; flex: 1; min-height: 0; }
+.intro { max-width: 420px; padding-bottom: 5px; font-size: 16px; line-height: 1.85; color: var(--muted-foreground); }
+.viewport { overflow: hidden; flex: 1; min-height: 0; margin-top: 20px; padding-bottom: 20px; }
 .track { position: relative; display: flex; gap: clamp(18px, 2vw, 40px); width: max-content; height: 100%; padding: 0 var(--gutter); }
 .card { min-width: 0; flex: 0 0 auto; width: 84vw; height: 100%; display: flex; flex-direction: column; }
 .imageLink { position: relative; display: block; overflow: hidden; flex: 1; min-height: 0; border-radius: 14px; background: var(--surface); }
@@ -58,7 +58,7 @@
   .section { padding-top: 72px; padding-bottom: 12px; }
   .header { gap: 8px; margin-bottom: 14px; }
   .heading { font-size: clamp(24px, 5svh, 34px); }
-  .intro, .description { display: none; }
+  /* .intro, .description { display: none; } */
   .details { padding-top: 10px; }
   .details h3 { font-size: 18px; }
   .footer { padding-top: 12px; font-size: 9px; }

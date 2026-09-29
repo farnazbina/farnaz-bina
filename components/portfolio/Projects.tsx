@@ -65,7 +65,7 @@ export function Projects() {
 
   return (
     <section id="work" ref={sectionRef} className={styles.section} aria-labelledby="projects-heading">
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <p className={styles.eyebrow}><span aria-hidden="true">•</span> Projects</p>
         <div>
           <h2 id="projects-heading" className={styles.heading}>
@@ -76,6 +76,15 @@ export function Projects() {
             ambitious platforms. Built with care, made to be used.
           </p>
         </div>
+      </header> */}
+      <header className={styles.header} data-skill-reveal>
+        <div>
+          <p className={styles.eyebrow}><span aria-hidden="true">✦</span> Projects</p>
+          <h2 id="skills-heading" className={styles.heading}>Creative <span>projects that<br />define</span> my work.</h2>
+        </div>
+        <p className={styles.intro}>
+            A selection of digital experiences, from thoughtful websites to
+            ambitious platforms. Built with care, made to be used.</p>
       </header>
       <div ref={viewportRef} className={styles.viewport}>
         <div ref={trackRef} className={styles.track}>
