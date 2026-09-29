@@ -27,7 +27,7 @@ export const SERVICES = [
   {
     n: "02",
     title: "Interaction Design",
-    body: "Motion systems with GSAP and Lenis that make interfaces feel physical, intentional and alive.",
+    body: "Motion systems with GSAP that make interfaces feel physical, intentional and alive.",
   },
   {
     n: "03",

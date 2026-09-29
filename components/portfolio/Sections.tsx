@@ -99,12 +99,11 @@ export function Services() {
         </p>
       </div>
 
-      <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
+      <div className="mt-16 flex items-stretch gap-px overflow-hidden rounded-2xl border border-border bg-border">
         {SERVICES.map((s) => (
           <div
             key={s.n}
-            data-reveal
-            className="group bg-background p-8 transition-colors duration-500 hover:bg-surface sm:p-12"
+            className=" bg-background p-8 transition-colors duration-500 hover:bg-surface sm:p-12"
           >
             <p className="text-xs tracking-[0.2em] text-accent">{s.n}</p>
             <h3 className="display mt-6 text-3xl sm:text-4xl">{s.title}</h3>
