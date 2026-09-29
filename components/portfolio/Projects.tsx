@@ -46,7 +46,7 @@ export function Projects() {
             ambitious platforms. Built with care, made to be used.</p>
       </header>
       <div className={styles.viewport}>
-        <div className={styles.track}>
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-10 px-4 md:px-30">
           {projects.map((project, index) => (
             <article key={project.slug} className={styles.card} data-project-card>
               <Link href={"/projects/" + project.slug} className={styles.imageLink} aria-label={"View " + project.title}>

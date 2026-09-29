@@ -41,45 +41,6 @@ export const SERVICES = [
   },
 ];
 
-export const PROJECTS = [
-  {
-    title: "Saas Project Management Dashboard",
-    year: "2026",
-    tag: "SaaS Dashboard",
-    body: "A comprehensive project management dashboard for a SaaS platform, featuring real-time collaboration tools, task tracking, and analytics to enhance team productivity and project visibility.",
-    image: saasImages.overview_png,
-    demo: "",
-    github: "",
-  },
-  {
-    title: "Maison Atelier",
-    year: "2025",
-    tag: "Commerce",
-    body: "Headless storefront for a slow-fashion label. Custom checkout, editorial product pages and a 98 Lighthouse score.",
-    image: project2,
-    demo: "https://example.com",
-    github: "https://github.com",
-  },
-  {
-    title: "Northsignal",
-    year: "2024",
-    tag: "Data platform",
-    body: "Observability tooling for ML pipelines: streaming charts, anomaly alerts and a keyboard-first command layer.",
-    image: project3,
-    demo: "https://example.com",
-    github: "https://github.com",
-  },
-  {
-    title: "Forma Studio",
-    year: "2024",
-    tag: "Creative site",
-    body: "An award-listed studio site built on scroll choreography, WebGL-lite transitions and a strict typographic grid.",
-    image: project4,
-    demo: "https://example.com",
-    github: "https://github.com",
-  },
-];
-
 export const TESTIMONIALS = [
   {
     quote:

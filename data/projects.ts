@@ -159,6 +159,87 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "lumiere_e_commerce",
+    title: "Lumiere E-commerce website",
+    subtitle: "",
+    tag: "React / Next.js",
+    year: "2026",
+    coverImage: '/projects/e-commerce/storefront.png',
+    body: "A self-built e-commerce website with Next.js and TypeScript, featuring product browsing, shopping cart, checkout, authentication and order management.",
+    demo: "https://saas-dashboard-iota-eight.vercel.app/overview",
+    github: "https://github.com/farnazbina/saas-dashboard",
+    createdDate: "2026-01-15",
+    content: {
+      introduction: `A modern, full-stack e-commerce website built with Next.js and TypeScript, designed to deliver a fast, scalable, and user-friendly online shopping experience. The project covers the core functionality of a production-ready online store, including product browsing, search and filtering, shopping cart, checkout flow, user authentication, and order management.
+
+Built with a focus on performance, responsive design, SEO, and clean architecture, this project demonstrates my ability to build complex e-commerce interfaces and scalable web applications with modern React and Next.js technologies.
+`,
+      role: {
+        title: "Independent Frontend Developer",
+        description: "As the sole developer of this self-directed project, I handled the frontend architecture, e-commerce features, state management and responsive UI. The project demonstrates my ability to turn a product concept into a functional, production-style shopping experience.",
+      },
+      responsibilities: [
+        "Independently designed and developed the e-commerce frontend using React and Next.js App Router.",
+        "Implemented product search, category-based filtering, multi-product cart, and wishlist functionality.",
+        "Built reusable and responsive UI components with Tailwind CSS and shadcn/ui.",
+        "Implemented client-side state management and data fetching with Zustand and TanStack Query.",
+        "Used React Hook Form and Zod for structured form handling and validation, with a focus on performance and maintainability.",
+      ],
+      delivery: {
+        title: "Independent ownership and code quality",
+        items: [
+          { title: "Self-made project, end-to-end ownership", description: "I built this dashboard independently as a personal portfolio project. I took responsibility for translating the product idea into connected screens, selecting the frontend tools and implementing the workflows. The project demonstrates initiative, self-directed learning and practical problem-solving." },
+          { title: "Clean, maintainable React code", description: "I used reusable components, TypeScript and shared interface patterns to keep repeated dashboard behavior consistent. Separating shared application state from local UI state helped keep components focused and made the codebase easier to extend." },
+          { title: "Forms and interaction design", description: "React Hook Form and Zod support form handling and validation, while dnd-kit supports task movement between Kanban columns. These choices let me focus on clear feedback, visible task status and consistent interactions across the dashboard." },
+          { title: "Transparent scope and future development", description: "This is a frontend portfolio project with a working demo and public source code. API integration and authentication remain future extensions. It showcases independent engineering ownership; my experience collaborating with designers and backend teams is demonstrated separately in Checkup Salamat." },
+        ],
+      },
+      features: [
+        { title: "Projects and Kanban tasks", description: "Manage projects and move tasks between workflow stages with drag-and-drop. Priorities, due dates and progress stay visible on each card." },
+        { title: "Analytics at a glance", description: "Recharts visualizations summarize project progress and task distribution, alongside an overview of recent clients." },
+        { title: "Clients and invoices", description: "Keep client profiles, linked projects and invoice payment status in the same workspace." },
+      ],
+      techStack: {
+        Framework: "React / Next.js App Router",
+        Language: "TypeScript",
+        Styling: "Tailwind CSS / shadcn/ui",
+        "State management": "Zustand / React Context",
+        "Data fetching": "TanStack Query",
+        Interactions: "React Hook Form / Zod",
+      },
+      challenges: [
+        {
+          title: "Multi-product shopping cart",
+          description: "Select multiple products and add them to the shopping cart for a seamless checkout experience."
+        },
+        {
+          title: "Wishlist and quick add",
+          description: "Save favorite products for later and easily move them to the shopping cart when ready to purchase."
+        },
+        {
+          title: "Search and product filtering",
+          description: "Find products quickly with search and filter options across multiple categories."
+        },
+        {
+          title: "Dark and light mode",
+          description: "Switch between dark and light themes for a personalized and comfortable shopping experience."
+        },
+      ],
+      results: [
+        "Built a complete e-commerce shopping experience with product discovery, filtering, search, cart and wishlist functionality.",
+        "Created a responsive and reusable frontend architecture with a consistent user experience across devices.",
+        "Established a scalable foundation for future features such as authentication, payments and order management.",
+      ],
+    },
+    gallery: [
+      '/projects/e-commerce/product-details.png',
+      '/projects/e-commerce/catalog.png',
+      '/projects/e-commerce/catalog-dark.png',
+      '/projects/e-commerce/account-overview.png',
+      '/projects/e-commerce/cart-drawer.png',
+    ],
+  },
+  {
     slug: "interior_design_studio",
     title: "Interior Design Studio",
     subtitle: "",
