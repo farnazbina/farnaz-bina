@@ -74,7 +74,7 @@ export function Hero({ ready }: { ready: boolean }) {
               </span>
             ))}
           </h1>
-          <strong className="mt-4 md:mt-0 mb-10 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[22px] 2xl:text-[22px] font-medium">Frontend Developer</strong>
+          {/* <strong className="mt-4 md:mt-0 mb-10 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[22px] 2xl:text-[22px] font-medium">Frontend Developer</strong> */}
 
           <div className="mt-2 sm:mt-4 md:mt-0 grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-[1fr_auto] items-center relative z-20">
 

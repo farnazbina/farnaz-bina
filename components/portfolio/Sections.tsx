@@ -44,7 +44,7 @@ export function About() {
         <div className="relative overflow-hidden rounded-2xl bg-surface h-[700px]" data-reveal>
           <img
             src="/images/setup.jpeg"
-            alt="Portrait of Alejandro Rayo"
+            alt="Portrait of Farnaz Bina"
             loading="lazy"
             width={1024}
             height={700}
@@ -181,7 +181,7 @@ export function Contact() {
           <div>
             <p className="eyebrow">Direct email</p>
             <a
-              href="mailto:hello@yourstudio.com"
+              href="mailto:farnazbina.dev@gmail.com"
               className="font-display text-2xl transition-colors hover:text-accent sm:text-3xl"
             >
               farnazbina.dev@gmail.com

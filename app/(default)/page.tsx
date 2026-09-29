@@ -11,7 +11,7 @@ import { useSmoothScroll } from "@/components/portfolio/useSmoothScroll";
 export const metadata: Metadata = {
   title: "Farnaz Bina — Frontend Developer Portfolio",
   description:
-    "Welcome to my portfolio. I build modern, fast, and beautiful web experiences using React, Next.js, Vue.js and TypeScript.",
+    "Farnaz Bina — Frontend Engineer with 5 years experience in React, Next.js and Vue.js. Building healthcare, fintech and SaaS applications for global teams.",
   alternates: {
     canonical: "https://farnaz-bina.vercel.app",
   },
