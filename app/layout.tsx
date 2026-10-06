@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Funnel_Sans, Funnel_Display } from "next/font/google";
 import "./globals.css";
 import { FloatingContact } from "@/components/FloatingContact";
+import { Nav } from "@/components/portfolio/Nav";
+import { Footer } from "@/components/portfolio/Sections";
 
 const funnelSans = Funnel_Sans({
   variable: "--font-funnel-sans",
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
         "https://github.com/farnazbina",
         "https://www.linkedin.com/in/farnazbina",
         "https://www.instagram.com/farnazbina",
-        "https://x.com/farnaz_bina"
+        "https://x.com/farnaz_bina",
       ],
       knowsAbout: [
         "React",
@@ -39,9 +41,9 @@ export const metadata: Metadata = {
         "Nuxt.js",
         "JavaScript",
         "TypeScript",
-        "Frontend Development"
-      ]
-    })
+        "Frontend Development",
+      ],
+    }),
   },
   keywords: [
     "Frontend Developer",
@@ -57,8 +59,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Farnaz Bina — Frontend Developer",
-    description:
-      "Explore my frontend projects, skills, and experience.",
+    description: "Explore my frontend projects, skills, and experience.",
     url: "https://farnaz-bina.vercel.app",
     siteName: "Farnaz Bina Portfolio",
     images: [
@@ -105,7 +106,9 @@ export default function RootLayout({
       className={`${funnelSans.variable} ${funnelDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Nav />
         {children}
+        <Footer />
         <FloatingContact />
       </body>
     </html>

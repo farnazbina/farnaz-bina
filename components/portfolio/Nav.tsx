@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useRef, useState } from "react";
 import { NAV_LINKS } from "./data";
@@ -7,18 +7,22 @@ import { usePathname } from "next/navigation";
 export function Nav() {
   const pathname = usePathname();
   const links = [...NAV_LINKS, { label: "Blog", href: "/blog" }];
-  const resolveHref = (href: string) => href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+  const resolveHref = (href: string) =>
+    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
   const [open, setOpen] = useState(false);
   const overlay = useRef<HTMLDivElement | null>(null);
   const header = useRef<HTMLElement | null>(null);
 
   return (
-    <>
+    <div className="container">
       <header
         ref={header}
-        className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 sm:px-10"
+        className="fixed inset-x-10 top-0 z-50 flex items-center justify-between py-5"
       >
-        <a href={resolveHref("#top")} className="display text-2xl text-secondary-foreground mt-3 sm:mt-0">
+        <a
+          href={resolveHref("#top")}
+          className="display text-2xl text-secondary-foreground mt-3 sm:mt-0"
+        >
           Farnaz Bina
         </a>
         <nav className="hidden items-center gap-8 md:flex">
@@ -49,7 +53,9 @@ export function Nav() {
           <span className="flex h-4 w-6 flex-col justify-between">
             <span
               className="block h-px w-full bg-secondary-foreground transition-transform duration-300"
-              style={{ transform: open ? "translateY(7.5px) rotate(45deg)" : undefined }}
+              style={{
+                transform: open ? "translateY(7.5px) rotate(45deg)" : undefined,
+              }}
             />
             <span
               className="block h-px w-full bg-secondary-foreground transition-opacity duration-300"
@@ -57,7 +63,11 @@ export function Nav() {
             />
             <span
               className="block h-px w-full bg-secondary-foreground transition-transform duration-300"
-              style={{ transform: open ? "translateY(-7.5px) rotate(-45deg)" : undefined }}
+              style={{
+                transform: open
+                  ? "translateY(-7.5px) rotate(-45deg)"
+                  : undefined,
+              }}
             />
           </span>
         </button>
@@ -89,10 +99,12 @@ export function Nav() {
           ))}
         </nav>
         <div className="space-y-3 border-t border-background/20 pt-6 text-sm">
-          <p data-menu-meta className="text-background/60">farnazbina.dev@gmail.com</p>
+          <p data-menu-meta className="text-background/60">
+            farnazbina.dev@gmail.com
+          </p>
           {/* <p data-menu-meta className="text-background/60">Lisbon, Portugal — available for work</p> */}
         </div>
       </div>
-    </>
+    </div>
   );
 }

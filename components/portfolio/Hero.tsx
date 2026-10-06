@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
@@ -17,8 +17,11 @@ export function Hero({ ready }: { ready: boolean }) {
         duration: 1.1,
         ease: "expo.out",
         stagger: 0.022,
-      })
-        .from("[data-hero-fade]", { y: 20, opacity: 0, duration: 0.9, ease: "power3.out", stagger: 0.12 }, "-=0.7");
+      }).from(
+        "[data-hero-fade]",
+        { y: 20, opacity: 0, duration: 0.9, ease: "power3.out", stagger: 0.12 },
+        "-=0.7",
+      );
     }, root);
     return () => ctx.revert();
   }, [ready]);
@@ -27,35 +30,35 @@ export function Hero({ ready }: { ready: boolean }) {
     <section
       id="top"
       ref={root}
-      className="relative flex min-h-0 flex-col justify-start overflow-hidden px-4 py-6 pt-20 sm:min-h-svh sm:justify-between sm:px-6 sm:pb-10 sm:pt-32 md:px-10 lg:px-16"
-
+      className="relative flex min-h-0 flex-col justify-start overflow-hidden py-6 pt-20 sm:min-h-svh sm:justify-between sm:pb-10 sm:pt-32"
     >
-      <div className="container mx-auto">
-        <div
-          aria-hidden
-          data-parallax="18"
-          className="pointer-events-none absolute -right-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-accent/15 blur-[120px]"
+      <div
+        aria-hidden
+        data-parallax="18"
+        className="pointer-events-none absolute -right-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-accent/15 blur-[120px]"
+      />
+
+      <div className="hero-svg absolute right-[4%] top-[9%] sm:right-[6%] sm:top-[8%] md:right-[10%] lg:top-[13%] z-10">
+        <Image
+          src="/images/22_hero-img.webp"
+          width={180} // Match w-45 (45 * 4px = 180px)
+          height={225} // Maintain aspect ratio (180 * 1.25 = 225)
+          alt="Hero_svg"
+          loading="eager"
+          className="w-45 h-auto sm:w-50 md:w-75 lg:w-100"
         />
-
-        <div className="hero-svg absolute right-[4%] top-[9%] sm:right-[6%] sm:top-[8%] md:right-[10%] lg:top-[13%] z-10">
-          <Image
-            src='/images/22_hero-img.webp'
-            width={180}  // Match w-45 (45 * 4px = 180px)
-            height={225} // Maintain aspect ratio (180 * 1.25 = 225)
-            alt="Hero_svg"
-            loading="eager"
-            className="w-45 h-auto sm:w-50 md:w-75 lg:w-100"
-          />
-        </div>
-
-        <div className="flex flex-col w-full mt-8 sm:mt-0 sm:absolute sm:bottom-[4%] sm:left-0 sm:right-0 sm:mx-auto px-0 sm:px-6 md:px-10 2xl:px-20 relative z-20">
+      </div>
+      <div className="container">
+        <div className="flex flex-col w-full mt-8 sm:mt-0 sm:mx-auto relative z-20">
           <div className="blured-card"></div>
 
           <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[70%] text-sm sm:text-base md:text-[32px] 2xl:text-[26px] font-semibold">
-            Frontend Engineer building fast, scalable web experiences with React & Next.js
+            Frontend Engineer building fast, scalable web experiences with React
+            & Next.js
           </p>
           <p className="mt-10 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[16px] 2xl:text-[22px] font-medium">
-            5 years of production experience across healthcare, fintech and business applications.
+            5 years of production experience across healthcare, fintech and
+            business applications.
           </p>
 
           <h1
@@ -66,7 +69,11 @@ export function Hero({ ready }: { ready: boolean }) {
               <span key={li} className="block overflow-hidden">
                 <span className="block pb-[0.04em] flex gap-x-1 sm:gap-x-2 md:gap-x-3">
                   {line.split("").map((ch, i) => (
-                    <span key={i} data-char className="inline-block whitespace-pre text-[11vw] sm:text-[12vw] md:text-[14vw] lg:text-[13vw] 2xl:text-[240px] font-black relative z-20">
+                    <span
+                      key={i}
+                      data-char
+                      className="inline-block whitespace-pre text-[11vw] sm:text-[12vw] md:text-[14vw] lg:text-[13vw] 2xl:text-[240px] font-black relative z-20"
+                    >
                       {ch}
                     </span>
                   ))}
@@ -74,18 +81,20 @@ export function Hero({ ready }: { ready: boolean }) {
               </span>
             ))}
           </h1>
-         
+
           <div className="mt-2 sm:mt-4 md:mt-0 grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-[1fr_auto] items-center relative z-20">
-
-
-
-            <div data-hero-fade className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 sm:mt-0 mb-10 sm:mb-0">
+            <div
+              data-hero-fade
+              className="flex flex-wrap items-center gap-3 sm:gap-4 mt-6 sm:mt-0 mb-10 sm:mb-0"
+            >
               <a
                 href="#work"
                 className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-foreground px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4 text-xs sm:text-sm font-medium text-background transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
               >
                 Explore my work
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </a>
               <a
                 href="#contact"

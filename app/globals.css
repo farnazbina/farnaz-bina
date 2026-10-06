@@ -254,7 +254,8 @@ html.lenis body {
 
 @media (min-width: 1280px) {
   .container {
-    max-width: 1560px;
+    max-width: 1660px;
+    padding: 0 60px;
   }
 }
 

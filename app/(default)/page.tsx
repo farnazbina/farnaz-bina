@@ -1,10 +1,15 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 import { Experience } from "@/components/portfolio/Experience";
 import { Hero } from "@/components/portfolio/Hero";
 import { Nav } from "@/components/portfolio/Nav";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
-import { About, Contact, Footer, Services } from "@/components/portfolio/Sections";
+import {
+  About,
+  Contact,
+  Footer,
+  Services,
+} from "@/components/portfolio/Sections";
 
 export const metadata: Metadata = {
   title: "Farnaz Bina — Frontend Engineer Portfolio",
@@ -18,9 +23,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="relative">
-      <Nav />
       <main>
-        <Hero ready={true} /> 
+        <Hero ready={true} />
         <Projects />
         <Skills />
         <Experience />
@@ -28,7 +32,6 @@ export default function Home() {
         <Services />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }
