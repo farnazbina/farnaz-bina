@@ -49,7 +49,7 @@ export function Hero({ ready }: { ready: boolean }) {
         />
       </div>
       <div className="container">
-        <div className="flex flex-col w-full mt-8 sm:mt-0 sm:mx-auto relative z-20">
+        <div className="flex flex-col w-full mt-8 sm:mx-auto relative z-20 sm:mt-50">
           <div className="blured-card"></div>
 
           <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[70%] text-sm sm:text-base md:text-[32px] 2xl:text-[26px] font-semibold">
