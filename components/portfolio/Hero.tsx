@@ -52,9 +52,9 @@ export function Hero({ ready }: { ready: boolean }) {
         <div className="flex flex-col w-full mt-8 sm:mx-auto relative z-20 sm:mt-50">
           <div className="blured-card"></div>
 
-          <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[70%] text-sm sm:text-base md:text-[32px] 2xl:text-[26px] font-semibold">
-            Frontend Engineer building fast, scalable web experiences with React
-            & Next.js
+          <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[70%] text-sm sm:text-base md:text-[32px] 2xl:text-[26px] font-semibold text-balance">
+            Frontend developer building dashboards, booking platforms and fast
+            websites with React & Next.js
           </p>
           <p className="mt-10 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[16px] 2xl:text-[22px] font-medium">
             5 years of production experience across healthcare, fintech and

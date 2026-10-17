@@ -21,23 +21,23 @@ export const STATS = [
 export const SERVICES = [
   {
     n: "01",
-    title: "Web Engineering",
-    body: "Production-grade React and TypeScript applications built for speed, accessibility and long-term maintainability.",
+    title: "Landing pages & business websites",
+    body: "Fast, responsive, SEO-ready sites built with Next.js, from your Figma design or from scratch.",
   },
   {
     n: "02",
-    title: "Interaction Design",
-    body: "Motion systems with GSAP that make interfaces feel physical, intentional and alive.",
+    title: "Dashboards & admin panels",
+    body: "Role-based dashboards with tables, charts, calendars and forms, like the panels I've built for a hospital platform and a crypto exchange.",
   },
   {
     n: "03",
-    title: "Design Systems",
-    body: "Token-driven component libraries that keep a product visually coherent as the team scales.",
+    title: "Figma to code",
+    body: "Pixel-accurate, responsive implementation of your design using reusable components.",
   },
   {
     n: "04",
-    title: "Performance",
-    body: "Audits and refactors that cut load times, stabilise layout and lock rendering at a steady 60fps.",
+    title: "Performance & fixes",
+    body: "Audit and speed up an existing React or Next.js site: Core Web Vitals, layout shifts, bundle size.",
   },
 ];
 

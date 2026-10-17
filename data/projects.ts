@@ -166,8 +166,8 @@ export const projects: Project[] = [
     year: "2026",
     coverImage: '/projects/e-commerce/storefront.png',
     body: "A self-built e-commerce website with Next.js and TypeScript, featuring product browsing, shopping cart, checkout, authentication and order management.",
-    demo: "https://saas-dashboard-iota-eight.vercel.app/overview",
-    github: "https://github.com/farnazbina/saas-dashboard",
+    demo: "https://lumiere-e-commerce.vercel.app/",
+    github: "https://github.com/farnazbina/lumiere-e-commerce",
     createdDate: "2026-01-15",
     content: {
       introduction: `A modern, full-stack e-commerce website built with Next.js and TypeScript, designed to deliver a fast, scalable, and user-friendly online shopping experience. The project covers the core functionality of a production-ready online store, including product browsing, search and filtering, shopping cart, checkout flow, user authentication, and order management.

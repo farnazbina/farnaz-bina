@@ -17,39 +17,32 @@ const skillGroups = [
     number: "01",
     title: "Frontend engineering",
     icon: Braces,
-    subtitle: "Strong fundamentals and modern application frameworks.",
     skills: [
       "HTML5",
       "CSS3",
       "JavaScript (ES6+)",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Vue.js",
-      "Nuxt.js",
+      "Tailwind CSS",
+      "Responsive Design",
     ],
   },
   {
     number: "02",
     title: "Interface & motion",
     icon: Sparkles,
-    subtitle: "Responsive, accessible interfaces with thoughtful movement.",
     skills: [
-      "Tailwind CSS",
-      "Responsive Design",
-      "Accessibility (WCAG)",
-      "Design Systems",
       "GSAP",
       "CSS Animations",
+      "Accessibility (WCAG)",
+      "Design Systems"
     ],
   },
   {
     number: "03",
     title: "Application architecture",
     icon: Layers3,
-    subtitle: "Reusable components and reliable data flows.",
     skills: [
       "REST APIs",
+      "ApexCharts",
       "State Management",
       "Zustand",
       "React Query",
@@ -62,13 +55,9 @@ const skillGroups = [
     number: "04",
     title: "Quality & performance",
     icon: Gauge,
-    subtitle: "Maintainable code and fast, dependable experiences.",
     skills: [
       "Performance Optimization",
       "Core Web Vitals",
-      "Clean Code",
-      "Testing & Debugging",
-      "Browser DevTools",
       "SEO Fundamentals",
       "Cross-browser Compatibility",
     ],
@@ -77,28 +66,21 @@ const skillGroups = [
     number: "05",
     title: "Teamwork & delivery",
     icon: Users,
-    subtitle: "Clear collaboration from planning to code review.",
     skills: [
-      "Scrum / Agile",
-      "Jira / ClickUp",
       "Git / GitHub",
       "Code Review",
-      "Technical Communication",
-      "CI/CD Fundamentals",
+      "Scrum / Agile",
+      "Jira / ClickUp",
     ],
   },
   {
     number: "06",
     title: "Design & user experience",
     icon: PenTool,
-    subtitle: "Bringing design intent into everyday interactions.",
     skills: [
       "Figma",
       "UX Principles",
-      "Usability",
       "Design Handoff",
-      "Interaction Design",
-      "Visual Hierarchy",
     ],
   },
 ];
@@ -166,7 +148,7 @@ export function Skills() {
           </div>
           <p className={styles.intro}>
             From frontend fundamentals to performance, user experience, and team
-            delivery ? the tools and practices I bring to a project.
+            delivery the tools and practices I bring to a project.
           </p>
         </header>
 
@@ -184,7 +166,7 @@ export function Skills() {
         <div className={styles.layout}>
           <div className={styles.groups}>
             {skillGroups.map(
-              ({ number, title, subtitle, icon: Icon, skills }) => (
+              ({ number, title, icon: Icon, skills }) => (
                 <article
                   key={number}
                   className={styles.group}
@@ -195,7 +177,6 @@ export function Skills() {
                     <Icon size={21} strokeWidth={1.3} aria-hidden="true" />
                   </div>
                   <h3>{title}</h3>
-                  <p>{subtitle}</p>
                   <ul className={styles.tags} aria-label={`${title} skills`}>
                     {skills.map((skill) => (
                       <li key={skill}>{skill}</li>
@@ -208,10 +189,6 @@ export function Skills() {
         </div>
 
         <footer className={styles.footer}>
-          <p>
-            <span aria-hidden="true">✦</span> Always curious. Always refining
-            the craft.
-          </p>
           <a href="#contact">
             Let’s build something <ArrowUpRight size={16} aria-hidden="true" />
           </a>

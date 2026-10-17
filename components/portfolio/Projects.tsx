@@ -50,18 +50,11 @@ export function Projects({ showAll = false }: { showAll?: boolean }) {
               <span aria-hidden="true">✦</span> Projects
             </p>
             <h2 id="projects-heading" className={styles.heading}>
-              Creative{" "}
+              Selected{" "}
               <span>
-                projects that
-                <br />
-                define
-              </span>{" "}
-              my work.
+                work
+              </span>
             </h2>
-            <p className={styles.intro}>
-              A selection of digital experiences, from thoughtful websites to
-              ambitious platforms. Built with care, made to be used.
-            </p>
           </div>
           {!showAll && (
             <div className="w-1/3 flex justify-end">

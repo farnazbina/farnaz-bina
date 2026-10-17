@@ -67,10 +67,10 @@ export function About() {
               02 — About me
             </p>
             <h2
-              className="display mt-5 text-[11vw] leading-[0.92] sm:text-[7vw] lg:text-[4.4vw]"
+              className="display mt-5 text-[11vw] leading-[0.92] lg:text-[3vw]"
               data-reveal
             >
-              Engineering with a designer&rsquo;s eye
+              Frontend developer focused on dashboards and web apps
             </h2>
             <div
               className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground"
@@ -88,6 +88,7 @@ export function About() {
                 code that helps startups and agencies ship features
                 faster—without getting blocked by technical debt or UI bugs.
               </p>
+              <p>I'm open to freelance projects and full-time frontend roles.</p>
             </div>
             <dl
               className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8 text-sm"
@@ -133,20 +134,20 @@ export function Services() {
           </p>
         </div>
 
-        <div className="mt-16 flex items-stretch gap-px overflow-hidden rounded-2xl border border-border bg-border">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border bg-border">
           {SERVICES.map((s) => (
             <div
               key={s.n}
-              className=" bg-background p-8 transition-colors duration-500 hover:bg-surface sm:p-12"
+              className=" bg-background p-6 transition-colors duration-500 hover:bg-surface sm:py-6 sm:px-8"
             >
               <p className="text-xs tracking-[0.2em] text-accent">{s.n}</p>
-              <h3 className="display mt-6 text-3xl sm:text-4xl">{s.title}</h3>
+              <h3 className="display mt-6 text-3xl sm:text-4xl h-20">{s.title}</h3>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
                 {s.body}
               </p>
-              <span className="mt-8 inline-block text-sm text-muted-foreground transition-transform duration-500 group-hover:translate-x-1 group-hover:text-accent">
+              {/* <span className="mt-8 inline-block text-sm text-muted-foreground transition-transform duration-500 group-hover:translate-x-1 group-hover:text-accent">
                 →
-              </span>
+              </span> */}
             </div>
           ))}
         </div>
@@ -206,9 +207,9 @@ export function Contact() {
               className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground"
               data-reveal
             >
-              Currently taking on projects for Q3. Tell me a little about what
-              you&rsquo;re making and I&rsquo;ll get back to you within two
-              days.
+              Open to freelance projects and full-time roles. Send me a few
+              lines about what you&apos;re building, your timeline, and a link if you
+              have one. I reply within two days.
             </p>
           </div>
 
