@@ -45,7 +45,7 @@ export function Projects({ showAll = false }: { showAll?: boolean }) {
     >
       <div className="container">
         <header className={styles.header}>
-          <div className="w-2/3">
+          <div className="w-2/3 mt-10 sm:mt-0">
             <p className={styles.eyebrow}>
               <span aria-hidden="true">✦</span> Projects
             </p>

@@ -1,4 +1,3 @@
-import { saasImages } from "@/lib/saas-images";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -7,6 +6,7 @@ import SaasCaseStudy from "@/components/CaseStudy/SaasCaseStudy";
 import { getProjectBySlug, projects } from "@/data/projects";
 import Gallery from "@/components/CaseStudy/Gallery";
 import ContentSection from "@/components/CaseStudy/ContentSection";
+
 
 export async function generateStaticParams() {
     return projects.map((project) => ({
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? "A Vue 3, Nuxt.js and TypeScript healthcare platform: online appointment booking, doctor scheduling and clinic dashboards. Frontend case study by Farnaz Bina."
         : isSaas ? "Self-made React and Next.js dashboard: Kanban tasks, analytics and reusable TypeScript components. Explore Farnaz Bina?s TypeScript frontend case study." : project.body;
     const url = `/projects/${project.slug}`;
-    const images = [{ url: isCheckup ? "/images/checkup/responsivee.png" : isSaas ? saasImages.overview_png : project.coverImage, alt: project.title }];
+    const images = [{ url: isCheckup ? "/images/checkup/responsivee.png" : isSaas ? "/images/saas_dashboard/overview.png" : project.coverImage, alt: project.title }];
     return {
         title, description,
         alternates: { canonical: url },
@@ -66,7 +66,7 @@ export default async function ProjectPage({ params }: PageProps) {
                         day: "numeric",
                     })}
                 </p>
-                <div className="relative w-full h-64 md:h-172 mt-4 rounded-xl overflow-hidden shadow-lg">
+                <div className="relative w-full h-64 md:h-172 mt-4 rounded-xl overflow-hidden ">
                     <Image
                         src={coverImage}
                         alt={title}

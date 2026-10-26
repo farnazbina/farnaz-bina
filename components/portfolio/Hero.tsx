@@ -49,16 +49,16 @@ export function Hero({ ready }: { ready: boolean }) {
         />
       </div>
       <div className="container">
-        <div className="flex flex-col w-full mt-8 sm:mx-auto relative z-20 sm:mt-50">
+        <div className="flex flex-col w-full mt-8 sm:mx-auto relative z-20 sm:mt-40">
           <div className="blured-card"></div>
 
           <p className="mt-20 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[70%] text-sm sm:text-base md:text-[32px] 2xl:text-[26px] font-semibold text-balance">
-            Frontend developer building dashboards, booking platforms and fast
-            websites with React & Next.js
+            Frontend Engineer building fast dashboards, booking platforms and
+            SaaS products with React & Next.js
           </p>
           <p className="mt-10 sm:mt-0 text-text/80 max-w-full sm:max-w-[70%] md:max-w-[70%] lg:max-w-[60%] text-sm sm:text-base md:text-[16px] 2xl:text-[22px] font-medium">
-            5 years of production experience across healthcare, fintech and
-            business applications.
+            5 years of production experience in healthcare, fintech and SaaS.
+            Open to remote full-time and contract roles.
           </p>
 
           <h1
@@ -67,7 +67,7 @@ export function Hero({ ready }: { ready: boolean }) {
           >
             {HEADLINE.map((line, li) => (
               <span key={li} className="block overflow-hidden">
-                <span className="block pb-[0.04em] flex gap-x-1 sm:gap-x-2 md:gap-x-3">
+                <span className="pb-[0.04em] flex gap-x-1 sm:gap-x-2 md:gap-x-3">
                   {line.split("").map((ch, i) => (
                     <span
                       key={i}
@@ -91,7 +91,7 @@ export function Hero({ ready }: { ready: boolean }) {
                 href="#work"
                 className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-foreground px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4 text-xs sm:text-sm font-medium text-background transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
               >
-                Explore my work
+                View my work
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
@@ -100,7 +100,7 @@ export function Hero({ ready }: { ready: boolean }) {
                 href="#contact"
                 className="text-xs sm:text-sm font-medium rounded-full border border-solid border-accent transition-all duration-300 hover:bg-accent hover:text-accent-foreground px-5 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4"
               >
-                Start a project
+                Let’s talk
               </a>
             </div>
           </div>

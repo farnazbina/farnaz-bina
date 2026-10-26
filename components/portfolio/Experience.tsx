@@ -72,7 +72,7 @@ export function Experience() {
               03 — Experience
             </p>
             <h2
-              className="display mt-5 text-[12vw] leading-[0.92] sm:text-[7vw] lg:text-[4.8vw]"
+              className="display mt-5 text-[7vw] leading-[0.92] sm:text-[7vw] lg:text-[4.8vw]"
               data-reveal
             >
               Where I&rsquo;ve worked
@@ -105,7 +105,7 @@ export function Experience() {
                   <p className="eyebrow pt-1">{e.period}</p>
                   <div>
                     <div className="flex items-center gap-x-6 w-full justify-between">
-                      <h3 className="display text-3xl sm:text-4xl">
+                      <h3 className="display text-xl sm:text-3xl">
                         {e.link ? (
                           <a
                             href={e.link}
@@ -134,9 +134,6 @@ export function Experience() {
                         )}
                       </h3>
                     </div>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {e.role}
-                    </p>
                     <p className="mt-4 max-w-[80%] text-sm leading-relaxed text-muted-foreground">
                       {e.body}
                     </p>

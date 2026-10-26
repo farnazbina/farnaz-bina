@@ -1,9 +1,3 @@
-import { saasImages } from "@/lib/saas-images";
-import project1 from "@/assets/projects/chechup_salamat.webp";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
-
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
@@ -78,57 +72,51 @@ export const SKILLS = [
 
 export const EXPERIENCES = [
   {
-    period: "Sep 2025 - Aug 2026",
-    role: "Frontend Engineer",
-    company: "Amniyat Parast Co",
+    period: "Sep 2025 – Aug 2026",
+    company: "Amniyat Parast Co — Frontend Developer (Contract)",
     link: "",
     location: "",
-    body: "Engineered a fully responsive, high-performance website from scratch using Next.js and TypeScript, delivering seamless user experiences across all devices with Tailwind CSS. Built dynamic, type-safe forms with React Hook Form and Zod for robust validation, ensuring clean data submission and enhanced user experience. Implemented state management using Zustand, efficiently handling complex application state across multiple components and improving data consistency.",
-    stack: ["React.js", "Next.js", "Tailwind CSS", "Rest API", "ApexCharts"],
+    body: "Built a responsive, SEO-focused website with Next.js, TypeScript and Tailwind CSS using SSR/SSG, scoring Lighthouse Performance 94, Accessibility 96 and SEO 100. Developed an admin panel with advanced filtering, plus type-safe forms (React Hook Form, Zod) and Zustand state management.",
+    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Rest API"],
   },
   {
-    period: "Jul 2024 - Jan 2026",
-    role: "Frontend Engineer",
-    company: "Checkup Salamat",
+    period: "Dec 2023 – Feb 2026",
+    company: "Checkup Salamat — Frontend Developer",
     link: "https://checkupsalamat.com/",
     location: "",
-    body: "Architected a comprehensive health appointment platform for a leading Iranian hospital, delivering role-based dashboards (Admin, Doctor, Receptionist, and Patient) with a dynamic physician calendar and an integrated online payment system that supports multi-person bookings. I also built real-time statistical and financial reporting modules for operational insights, and enforced a cohesive, reusable design system that ensured clean, maintainable code—resulting in a 98 Lighthouse performance score.",
-    stack: ["Vue.js", "Nuxt.js", "Tailwind CSS", "Rest API", "ApexCharts"],
+    body: "Built the full frontend of a healthcare booking platform with Vue 3, Nuxt 3 and TypeScript, including Admin and Physician dashboards with RBAC. Created a design system that sped up feature development by 30% and raised Lighthouse Performance to ~98.",
+    stack: ["Vue 3", "Nuxt 3", "Vuetify", "TypeScript", "Rest API", "ApexCharts", "Pinia"],
   },
   {
-    period: "Dec 2024 - Mar 2025",
-    role: "Frontend Developer",
-    company: "ArvinTav Co",
+    period: "Dec 2024 – Mar 2025",
+    company: "ArvinTav — Frontend Developer (Part-time)",
     link: "https://www.linkedin.com/company/arvin-tav/posts/?feedView=all",
     location: "",
-    body: "Engineered a high-end financial services website for a distinguished client, delivering a visually captivating UI enriched with sophisticated light-based effects, dynamic motion, and creative micro-interactions that elevate the brand's digital presence.",
-    stack: ["React", "Design Systems", "WebSockets", "Testing"],
+    body: "Built the frontend of a financial platform with Nuxt 3, with real-time-style charts in ApexCharts and Chart.js for portfolio, market and risk data.",
+    stack: ["Nuxt 3", "TypeScript", "Pinia", "ApexCharts"],
   },
   {
     period: "Oct 2023 — Jul 2024",
-    role: "Frontend Developer",
-    company: "Doctor Online Plus",
+    company: "Doctor Online Plus — Frontend Developer, Oct 2023 – Jul 2024",
     link: "https://www.linkedin.com/company/doctor-online-plus/posts/?feedView=all",
     location: "",
-    body: "Designed and built the complete frontend of a modern online appointment scheduling platform from scratch, implementing role-specific dashboards for Admin, Doctors/Specialists, Patients, and Receptionists with robust RBAC to ensure secure, customized user access and workflows.",
-    stack: ["TypeScript", "D3", "Node.js"],
+    body: "Built an appointment-scheduling frontend with RBAC dashboards for Admin, Doctor, Patient and Receptionist roles, plus a reusable design system. Worked on the same team as Checkup Salamat.",
+    stack: ["Vue 3", "Nuxt 3", "Vuetify", "TypeScript", "Rest API", "ApexCharts", "Pinia"],
   },
   {
     period: "Jan 2022 — Sep 2023",
-    role: "Frontend Developer",
     link: "https://bit24.cash/",
-    company: "Bit24.cash",
+    company: "Bit24.cash — Frontend Developer",
     location: "",
     body: "Collaborated within a 9-person engineering team on a digital currency exchange platform, leveraging Git and pull requests to ensure seamless code integration under technical leadership. I architected and delivered multiple internal panels—including warehouse management, DevOps data systems, analytics, and a super admin dashboard unifying users, transactions, and orders—to drive operational efficiency and comprehensive platform oversight.",
-    stack: ["JavaScript", "GSAP", "Headless CMS"],
+    stack: ["Vue.js", "Nuxt.js", "Tailwind CSS", "Vuetify", "Rest API", "ApexCharts", "Pinia"],
   },
   {
-    period: "Jan 2022 — Sep 2023",
-    role: "Frontend Developer",
+    period: "Jan 2022 – Sep 2023",
     link: "https://www.linkedin.com/company/rominatech/posts/?feedView=all",
-    company: "Romina Tech",
+    company: "Romina Co — Frontend Developer",
     location: "",
-    body: "Designed and developed international websites featuring advanced scroll animations and interactive effects using GSAP and SmoothScroll technologies to deliver engaging, high-end user experiences across global audiences.",
-    stack: ["JavaScript", "GSAP", "Headless CMS"],
+    body: "Worked in a 9-person Agile/Scrum team on Bit24.cash, a digital currency exchange. Built order forms, trading views, a custom design system and 4+ internal panels. Also delivered multilingual marketing websites with GSAP animations for international clients.",
+    stack: ["Vue.js", "Nuxt.js", "Tailwind CSS", "Rest API", "ApexCharts", "GSAP", "Design Systems"],
   },
 ];

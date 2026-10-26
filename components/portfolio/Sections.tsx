@@ -45,11 +45,11 @@ export function Stats() {
 
 export function About() {
   return (
-    <section id="about" className="py-24 sm:py-32">
+    <section id="about" className="py-14 sm:py-32">
       <div className="container">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-24">
           <div
-            className="relative overflow-hidden rounded-2xl bg-surface h-[700px]"
+            className="relative overflow-hidden rounded-2xl bg-surface h-[400px] sm:h-[700px]"
             data-reveal
           >
             <img
@@ -67,7 +67,7 @@ export function About() {
               02 — About me
             </p>
             <h2
-              className="display mt-5 text-[11vw] leading-[0.92] lg:text-[3vw]"
+              className="display mt-5 text-[7vw]  lg:text-[3vw]"
               data-reveal
             >
               Frontend developer focused on dashboards and web apps
@@ -78,20 +78,19 @@ export function About() {
               data-reveal-stagger
             >
               <p>
-                I&rsquo;m Farnaz Bina, a frontend developer with 5 years of
-                professional experience, including 3 years building
-                production-grade apps with Vue.js. Now specializing in Next.js
-                and React to create fast, SEO-friendly, and user-centric web
-                applications. I bring hands-on experience with Server
-                Components, App Router, TypeScript, and performance optimization
-                (Core Web Vitals). My focus is on writing clean, maintainable
-                code that helps startups and agencies ship features
-                faster—without getting blocked by technical debt or UI bugs.
+                I’m a frontend engineer with 5 years of experience building
+                production web apps in healthcare, fintech and SaaS. I started
+                with Vue/Nuxt and now work mainly with React, Next.js (App
+                Router) and TypeScript. I build role-based dashboards, design
+                systems and multilingual (i18n/RTL) interfaces, with attention
+                to Core Web Vitals and accessibility. My latest Next.js work
+                scores 94–100 on Lighthouse. I work well in remote, Agile teams
+                and write code that stays easy to maintain.
               </p>
-              <p>I'm open to freelance projects and full-time frontend roles.</p>
+              <p>I’m open to remote full-time and contract roles.</p>
             </div>
             <dl
-              className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8 text-sm"
+              className="mt-10"
               data-reveal
               data-reveal-stagger
             >
@@ -111,7 +110,7 @@ export function About() {
 
 export function Services() {
   return (
-    <section id="services" className="border-t border-border py-24 sm:py-32">
+    <section id="services" className="border-t border-border py-14 sm:py-32">
       <div className="container">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -119,7 +118,7 @@ export function Services() {
               03 — What I do
             </p>
             <h2
-              className="display mt-5 text-[12vw] leading-[0.92] sm:text-[7vw] lg:text-[4.8vw]"
+              className="display mt-5 text-[7vw] sm:text-[7vw] lg:text-[4.8vw]"
               data-reveal
             >
               Services
@@ -141,7 +140,9 @@ export function Services() {
               className=" bg-background p-6 transition-colors duration-500 hover:bg-surface sm:py-6 sm:px-8"
             >
               <p className="text-xs tracking-[0.2em] text-accent">{s.n}</p>
-              <h3 className="display mt-6 text-3xl sm:text-4xl h-20">{s.title}</h3>
+              <h3 className="display mt-6 text-3xl sm:text-4xl h-20">
+                {s.title}
+              </h3>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
                 {s.body}
               </p>
@@ -188,7 +189,7 @@ export function Testimonials() {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32">
+    <section id="contact" className="py-14 sm:py-32">
       <div className="container">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
@@ -196,7 +197,7 @@ export function Contact() {
               06 — Contact
             </p>
             <h2
-              className="display mt-5 text-[13vw] leading-[0.9] sm:text-[8vw] lg:text-[5.2vw]"
+              className="display mt-5 text-[7vw] sm:text-[8vw] lg:text-[5.2vw]"
               data-reveal
             >
               Let&rsquo;s build
@@ -207,9 +208,9 @@ export function Contact() {
               className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground"
               data-reveal
             >
-              Open to freelance projects and full-time roles. Send me a few
-              lines about what you&apos;re building, your timeline, and a link if you
-              have one. I reply within two days.
+              Open to remote full-time and contract roles. Send me a few lines
+              about the role or project and I’ll reply within 48 hours. I’m in
+              Tabriz (UTC+3:30), with good overlap with European hours.
             </p>
           </div>
 

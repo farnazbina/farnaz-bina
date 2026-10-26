@@ -1,4 +1,3 @@
-import { saasImages } from "@/lib/saas-images";
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
@@ -9,13 +8,14 @@ import AnimatedPreview from "./AnimatedPreview";
 import EngineeringPractice from "./EngineeringPractice";
 
 const screenshots = [
-  { src: saasImages.overview_png, title: "01 / Dashboard analytics", alt: "SaaS dashboard overview with project progress charts, task distribution and recent clients", caption: "Project progress and task distribution give the workspace a clear starting point." },
-  { src: saasImages.tasks_png, title: "02 / Kanban task board", alt: "React Kanban board with task priorities, due dates and progress across five workflow stages", caption: "Task cards surface priorities, deadlines and progress across the workflow." },
-  { src: saasImages.projects_png, title: "03 / Project management", alt: "Next.js SaaS dashboard project management screen", caption: "A dedicated workspace for organizing projects and tracking their status." },
-  { src: saasImages.invoices_png, title: "04 / Invoice management", alt: "SaaS invoice management interface with payment status tracking", caption: "Invoice records and payment status sit alongside project and client work." },
-  { src: saasImages.clients_png, title: "05 / Client records", alt: "SaaS dashboard client management screen", caption: "Client records bring customer information into the project workspace." },
-  { src: saasImages.teams_png, title: "06 / Teams", alt: "SaaS dashboard team management screen", caption: "A dedicated view keeps team information together." },
-  { src: saasImages.settings_png, title: "07 / Settings", alt: "SaaS dashboard settings screen", caption: "Workspace settings are accessible within the same dashboard layout." },
+  { src: "/images/saas_dashboard/overview.png", title: "01 / Dashboard analytics", alt: "SaaS dashboard overview with project progress charts, task distribution and recent clients", caption: "Project progress and task distribution give the workspace a clear starting point." },
+  { src: "/images/saas_dashboard/projects-grid.png", title: "02 / Kanban task board", alt: "React Kanban board with task priorities, due dates and progress across five workflow stages", caption: "Task cards surface priorities, deadlines and progress across the workflow." },
+  { src: "/images/saas_dashboard/projects-list.png", title: "03 / Project management", alt: "Next.js SaaS dashboard project management screen", caption: "A dedicated workspace for organizing projects and tracking their status." },
+  { src: "/images/saas_dashboard/task-grid.png", title: "04 / Invoice management", alt: "SaaS invoice management interface with payment status tracking", caption: "Invoice records and payment status sit alongside project and client work." },
+  { src: "/images/saas_dashboard/task-list.png", title: "05 / Client records", alt: "SaaS dashboard client management screen", caption: "Client records bring customer information into the project workspace." },
+  { src: "/images/saas_dashboard/calendar.png", title: "06 / Teams", alt: "SaaS dashboard team management screen", caption: "A dedicated view keeps team information together." },
+  { src: "/images/saas_dashboard/my-tasks.png", title: "07 / Settings", alt: "SaaS dashboard settings screen", caption: "Workspace settings are accessible within the same dashboard layout." },
+  { src: "/images/saas_dashboard/teams.png", title: "07 / Settings", alt: "SaaS dashboard settings screen", caption: "Workspace settings are accessible within the same dashboard layout." },
 ];
 
 
@@ -46,8 +46,8 @@ export default function SaasCaseStudy({ project }: { project: Project }) {
             <a href={project.demo} target="_blank" rel="noreferrer" className="rounded-full bg-foreground px-5 py-2 text-sm text-background">Explore live demo ↗</a>
           </div>
             {project.github && <a href={project.github} target="_blank" rel="noreferrer" className="mb-6 inline-block border-b border-border pb-1 text-sm">View source on GitHub</a>}
-          <figure className="overflow-hidden rounded-2xl bg-surface">
-            <Image src={saasImages.overview_png} alt="SaaS project management dashboard with analytics charts and client overview" width={1921} height={1110} priority sizes="(max-width: 1152px) 100vw, 1072px" className="max-h-[640px] w-full object-contain" />
+          <figure className="overflow-hidden rounded-2xl">
+            <Image src="/images/saas_dashboard/overview.png" alt="SaaS project management dashboard with analytics charts and client overview" width={1921} height={1110} priority sizes="(max-width: 1152px) 100vw, 1072px" className="max-h-[640px] w-full object-contain" />
           </figure>
         </header>
 
@@ -62,7 +62,7 @@ export default function SaasCaseStudy({ project }: { project: Project }) {
           <h2 id="features-heading" className="display text-3xl sm:text-4xl">From the big picture to the next task.</h2>
           <div className="my-8 grid gap-4 md:grid-cols-3">{content.features?.map((feature, index) => <article key={feature.title} className="rounded-2xl border border-border bg-surface p-6"><span className="text-xs text-[#b29a63]">0{index + 1}</span><h3 className="mt-5 text-lg font-semibold">{feature.title}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{feature.description}</p></article>)}</div>
           <div className="mx-auto max-w-3xl">
-            <AnimatedPreview poster={saasImages.tasks_png} animation={saasImages.kanban_demo_gif} alt="Kanban task board workflow demonstration" />
+            {/* <AnimatedPreview poster={saasImages.tasks_png} animation={saasImages.kanban_demo_gif} alt="Kanban task board workflow demonstration" /> */}
           </div>
         </section>
 

@@ -16,9 +16,9 @@ const funnelDisplay = Funnel_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Farnaz Bina — Frontend Developer",
+  title: "Farnaz Bina — Frontend Engineer (React, Next.js, TypeScript)",
   description:
-    "Frontend developer specializing in React, Next.js, Vue.js and modern UI development. Explore my projects, skills, and experience.",
+    "Frontend Engineer with 5 years of experience in React, Next.js and TypeScript. Building dashboards, booking platforms and SaaS products for remote teams.",
   metadataBase: new URL("https://farnaz-bina.vercel.app"),
 
   other: {
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Farnaz Bina",
-      jobTitle: "Frontend Developer",
+      jobTitle: "Farnaz Bina — Frontend Engineer (React, Next.js, TypeScript)",
       url: "https://farnaz-bina.vercel.app",
       sameAs: [
         "https://github.com/farnazbina",
-        "https://www.linkedin.com/in/farnazbina",
-        "https://www.instagram.com/farnazbina",
+        "https://www.linkedin.com/in/farnaz-bina/",
+        "https://www.instagram.com/farnazbina/",
         "https://x.com/farnaz_bina",
       ],
       knowsAbout: [
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Farnaz Bina — Frontend Developer",
-    description: "Explore my frontend projects, skills, and experience.",
+    title: "Farnaz Bina — Frontend Engineer (React, Next.js, TypeScript)",
+    description: "Frontend Engineer with 5 years of experience in React, Next.js and TypeScript. Building dashboards, booking platforms and SaaS products for remote teams.",
     url: "https://farnaz-bina.vercel.app",
     siteName: "Farnaz Bina Portfolio",
     images: [
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Farnaz Bina — Frontend Developer",
-    description: "Explore my frontend projects, skills, and experience.",
+    title: "Farnaz Bina — Frontend Engineer (React, Next.js, TypeScript)",
+    description: "Frontend Engineer with 5 years of experience in React, Next.js and TypeScript. Building dashboards, booking platforms and SaaS products for remote teams.",
     images: ["/og-image.jpg"],
   },
 

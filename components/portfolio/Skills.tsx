@@ -136,7 +136,7 @@ export function Skills() {
     >
       <div className="container">
         <header className={styles.header} data-skill-reveal>
-          <div>
+          <div className="mt-10 sm:mt-0">
             <p className={styles.eyebrow}>
               <span aria-hidden="true">✦</span> Skills & expertise
             </p>
